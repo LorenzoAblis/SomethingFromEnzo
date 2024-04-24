@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    position: relative;
+
+    .home-image {
+      width: 100vw;
+      object-fit: cover;
+      filter: blur(4px);
+      transform: scale(1.5);
+      margin-bottom: 10rem;
+    }
+
+    #handwriting {
+      position: absolute;
+      margin-top: 30vh;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 30vw;
+      z-index: 500;
+      stroke-dasharray: 6600;
+      stroke-dashoffset: 2000;
+    }
+  }
+}
