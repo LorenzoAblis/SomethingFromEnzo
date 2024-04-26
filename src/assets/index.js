@@ -1,1 +1,10 @@
-export { default as handwriting } from "./handwriting.svg";
+export { default as logo } from "./logo.png";
+export { default as home_image } from "./home_image.jpg";
+export { default as homemade } from "./homemade.jpg";
+export { default as redvelvet } from "./redvelvet.jpg";
+export { default as meibday } from "./meibday.jpg";
+export { default as macarons } from "./macarons.jpg";
+export { default as abt1 } from "./1977.jpg";
+export { default as abt2 } from "./2013.jpg";
+export { default as abt3 } from "./2018.jpg";
+export { default as chocolate } from "./chocolate.jpg";

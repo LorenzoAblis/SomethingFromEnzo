@@ -5,6 +5,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 20rem;
 
   div {
     position: relative;
@@ -14,7 +15,6 @@ main {
       object-fit: cover;
       filter: blur(4px);
       transform: scale(1.1) translateY(-10%);
-      margin-bottom: 10rem;
     }
 
     .handwriting {
@@ -22,7 +22,7 @@ main {
       margin-top: 30vh;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -120%) scale(2);
+      transform: translate(-50%, -100%) scale(2);
       height: 30vw;
       width: 25rem;
       z-index: 500;
@@ -37,6 +37,205 @@ main {
           to {
             stroke-dashoffset: 0;
           }
+        }
+      }
+    }
+  }
+
+  section {
+    display: flex;
+    width: 100%;
+  }
+
+  .homemade-section {
+    padding-left: 20rem;
+    margin-bottom: 15vh;
+
+    img {
+      width: 40vw;
+      object-fit: cover;
+      border-radius: 5%;
+      box-shadow: 10px 10px 0 $background-secondary;
+    }
+
+    div {
+      padding-left: 5rem;
+
+      h2 {
+        font-family: "Dancing Script", cursive;
+        color: $primary;
+        font-size: 3.5rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.35rem;
+        width: 70%;
+      }
+    }
+  }
+
+  .featured-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 7rem;
+
+    h3 {
+      color: $background-secondary;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 40%;
+        background-color: $background-secondary;
+      }
+
+      &::before {
+        top: 50%;
+        left: -50%;
+        height: 2px;
+      }
+
+      &::after {
+        bottom: 50%;
+        right: -50%;
+        height: 3px;
+      }
+    }
+
+    h2 {
+      font-family: "Dancing Script", cursive;
+      color: $primary;
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    div {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 25vw;
+          border-radius: 5%;
+          box-shadow: 10px 10px 0 $primary;
+          transition: box-shadow 0.35s;
+
+          &:hover {
+            box-shadow: 10px 10px 1rem $primary;
+          }
+        }
+
+        h4 {
+          font-size: 1.5rem;
+          color: $secondary;
+          margin-bottom: 0;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    a {
+      border: 0.45rem $primary solid;
+      text-decoration: none;
+      color: $primary;
+      font-size: 1.15rem;
+      font-weight: 600;
+      width: 15vw;
+      padding: 0.5rem;
+      margin-top: 3rem;
+      transition: background-color 0.35s, color 0.35s, box-shadow 0.35s;
+
+      &:hover {
+        background-color: $primary;
+        color: white;
+        box-shadow: 0 0 0.35rem black;
+      }
+    }
+  }
+
+  .about-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $background-secondary;
+
+    h3 {
+      color: $accent;
+      font-size: 1.5rem;
+      margin-top: 5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2 {
+      font-family: "Dancing Script", cursive;
+      color: white;
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    div {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 8rem;
+
+      div {
+        margin-top: 3rem;
+        padding: 1rem;
+        width: 22%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h4 {
+          font-size: 3rem;
+          color: $primary;
+          margin: 0;
+        }
+
+        p {
+          height: 50%;
+          margin: 0;
+          font-size: 1rem;
+          color: $background;
+        }
+
+        img {
+          position: absolute;
+          width: 15vw;
+          height: 40vh;
+          border-radius: 5%;
+          box-shadow: 0 0 0.5rem $primary;
+          object-fit: cover;
+          transform: translateY(300px);
         }
       }
     }

@@ -40,11 +40,18 @@ const Navbar = () => {
   return (
     <nav className={`${scroll ? "sticky" : ""}`}>
       <ul>
-        <li>
+        <div>
+          {routes.slice(0, routes.length / 2).map((route, index) => (
+            <li key={index}>
+              <Link to={`/${route.route}`}>{route.name}</Link>
+            </li>
+          ))}
+        </div>
+        <li className="logo">
           <img src={logo} alt="" />
         </li>
         <div>
-          {routes.map((route, index) => (
+          {routes.slice(routes.length / 2).map((route, index) => (
             <li key={index}>
               <Link to={`/${route.route}`}>{route.name}</Link>
             </li>
