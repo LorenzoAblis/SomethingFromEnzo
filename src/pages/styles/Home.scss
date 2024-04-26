@@ -75,7 +75,7 @@ main {
     }
   }
 
-  .featured-section {
+  .info-section {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -85,11 +85,23 @@ main {
     margin-bottom: 7rem;
 
     h3 {
-      color: $background-secondary;
       font-size: 1.5rem;
       margin-bottom: 1rem;
       position: relative;
       display: inline-block;
+    }
+
+    h2 {
+      font-family: "Dancing Script", cursive;
+      color: $primary;
+      font-size: 4rem;
+      margin: 0;
+    }
+  }
+
+  .featured-section {
+    h3 {
+      color: $background-secondary;
 
       &::before,
       &::after {
@@ -110,13 +122,6 @@ main {
         right: -50%;
         height: 3px;
       }
-    }
-
-    h2 {
-      font-family: "Dancing Script", cursive;
-      color: $primary;
-      font-size: 4rem;
-      margin: 0;
     }
 
     div {
@@ -176,28 +181,15 @@ main {
   }
 
   .about-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     background-color: $background-secondary;
 
     h3 {
       color: $accent;
-      font-size: 1.5rem;
       margin-top: 5rem;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
     }
 
     h2 {
-      font-family: "Dancing Script", cursive;
       color: white;
-      font-size: 4rem;
-      margin: 0;
     }
 
     div {
@@ -236,6 +228,69 @@ main {
           box-shadow: 0 0 0.5rem $primary;
           object-fit: cover;
           transform: translateY(300px);
+        }
+      }
+    }
+  }
+
+  .product-section {
+    margin-top: 7rem;
+
+    h3 {
+      color: $background-secondary;
+    }
+
+    h2 {
+      color: $accent;
+    }
+
+    div {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 8rem;
+
+      div {
+        margin-top: 5rem;
+        padding: 1rem;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .oval {
+          position: absolute;
+          z-index: -100;
+          margin-top: -25%;
+          width: 40%;
+          height: 50%;
+          background-color: rgba($accent, 0.1);
+          border-radius: 50%;
+        }
+
+        img {
+          width: 10vw;
+          border-radius: 5%;
+          object-fit: cover;
+        }
+
+        h4 {
+          font-size: 2.5rem;
+          width: 100%;
+          color: $primary;
+          margin: 0;
+          margin-top: 5rem;
+        }
+
+        p {
+          height: 50%;
+          width: 75%;
+          margin: 0;
+          margin-top: 1rem;
+          font-size: 1.25rem;
+          color: black;
         }
       }
     }

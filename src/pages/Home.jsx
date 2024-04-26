@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import * as images from "../assets";
-import Handwriting from "../components/Handwriting";
+import Handwriting from "../assets/icons/Handwriting.jsx";
 import "./styles/Home.scss";
 
 const Home = () => {
@@ -46,6 +46,42 @@ const Home = () => {
     },
   ];
 
+  const team = [
+    {
+      name: "Rose",
+      image: "redvelvet",
+      shadow: "$secondary",
+    },
+    {
+      name: "Enzo",
+      image: "redvelvet",
+      shadow: "$accent",
+    },
+    {
+      name: "Florence",
+      image: "redvelvet",
+      shadow: "$primary",
+    },
+  ];
+
+  const products = [
+    {
+      name: "Cakes",
+      text: "We primarily make cakes and have been doing so since the start.",
+      image: "cake",
+    },
+    {
+      name: "Baked Goods",
+      text: "We also make bread, cookies, and other goodies to compliment our cakes.",
+      image: "muffin",
+    },
+    {
+      name: "French Cuisine",
+      text: "Recently, I've been expirementing with french pastries and been loving it.",
+      image: "croissant",
+    },
+  ];
+
   return (
     <main>
       <div>
@@ -64,7 +100,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <section className="featured-section">
+      <section className="info-section featured-section">
         <h3>Featured</h3>
         <h2>Sweet Perfection</h2>
         <div>
@@ -78,7 +114,7 @@ const Home = () => {
         </div>
         <Link to="/gallery">View All Creations</Link>
       </section>
-      <section className="about-section">
+      <section className="info-section about-section">
         <h3>About Us</h3>
         <h2>Where did it start?</h2>
         <div>
@@ -91,9 +127,20 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section className="team-section">me and mom</section>
-      {/* TODO: TEAM SECTION */}
-      {/*  */}
+      <section className="info-section product-section">
+        <h3>Sweets</h3>
+        <h2>What do we make?</h2>
+        <div>
+          {products.map((item, index) => (
+            <div key={index}>
+              <div className="oval"></div>
+              <img src={images[item.image]} alt={item.image} />
+              <h4>{item.name}</h4>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 };
