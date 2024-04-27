@@ -77,7 +77,7 @@ const Home = () => {
     },
     {
       name: "French Cuisine",
-      text: "Recently, I've been expirementing with french pastries and been loving it.",
+      text: "Recently, I've been expirementing with french pastries and I've been loving it.",
       image: "croissant",
     },
   ];
@@ -86,9 +86,9 @@ const Home = () => {
     <main>
       <div>
         <img src={images.home_image} alt="home image" className="home-image" />
-        <Handwriting />
+        {/* <Handwriting /> */}
       </div>
-      <section className="homemade-section">
+      <section className="homemade">
         <img src={images.homemade} alt="homemade" />
         <div>
           <h2>Homemade Deliciousness</h2>
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <section className="info-section featured-section">
+      <section className="info featured" id="featured">
         <h3>Featured</h3>
         <h2>Sweet Perfection</h2>
         <div>
@@ -112,9 +112,9 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <Link to="/gallery">View All Creations</Link>
+        <Link to="gallery">View All Creations</Link>
       </section>
-      <section className="info-section about-section">
+      <section className="info about" id="history">
         <h3>About Us</h3>
         <h2>Where did it start?</h2>
         <div>
@@ -127,7 +127,8 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section className="info-section product-section">
+
+      <section className="info product" id="products">
         <h3>Sweets</h3>
         <h2>What do we make?</h2>
         <div>
@@ -141,6 +142,36 @@ const Home = () => {
           ))}
         </div>
       </section>
+      {/* <section className="info contact">
+        <p>Crafting delicious memories, one bite at a time.</p>
+        <div>
+          <img src={images["logo"]} alt="logo" />
+          <div>
+            <hr />
+            <h3>Questions?</h3>
+            <hr />
+          </div>
+          <h2>lablis228609@gmail.com</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <hr />
+          <li>
+            <a href="#featured">Featured</a>
+          </li>
+          <hr />
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <hr />
+          <li>
+            <a href="#products">Products</a>
+          </li>
+          <hr />
+        </ul>
+      </section> */}
     </main>
   );
 };

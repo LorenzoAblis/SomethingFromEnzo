@@ -19,3 +19,7 @@ export { default as logo } from "./icons/logo.png";
 export { default as cake } from "./icons/Cake.svg";
 export { default as muffin } from "./icons/Muffin.svg";
 export { default as croissant } from "./icons/Croissant.svg";
+export { default as instagram } from "./icons/instagram.svg";
+export { default as snapchat } from "./icons/snapchat.svg";
+export { default as facebook } from "./icons/facebook.svg";
+export { default as google } from "./icons/google.svg";

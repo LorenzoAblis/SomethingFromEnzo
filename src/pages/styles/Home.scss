@@ -5,16 +5,15 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20rem;
 
   div {
     position: relative;
 
     .home-image {
       width: 100vw;
-      object-fit: cover;
+      object-fit: contain;
       filter: blur(4px);
-      transform: scale(1.1) translateY(-10%);
+      transform: scale(1) translateY(-3vh);
     }
 
     .handwriting {
@@ -47,8 +46,8 @@ main {
     width: 100%;
   }
 
-  .homemade-section {
-    padding-left: 20rem;
+  .homemade {
+    justify-content: space-evenly;
     margin-bottom: 15vh;
 
     img {
@@ -59,7 +58,7 @@ main {
     }
 
     div {
-      padding-left: 5rem;
+      width: 40%;
 
       h2 {
         font-family: "Dancing Script", cursive;
@@ -70,12 +69,11 @@ main {
       p {
         margin: 0;
         font-size: 1.35rem;
-        width: 70%;
       }
     }
   }
 
-  .info-section {
+  .info {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -99,7 +97,7 @@ main {
     }
   }
 
-  .featured-section {
+  .featured {
     h3 {
       color: $background-secondary;
 
@@ -180,7 +178,7 @@ main {
     }
   }
 
-  .about-section {
+  .about {
     background-color: $background-secondary;
 
     h3 {
@@ -193,7 +191,7 @@ main {
     }
 
     div {
-      width: 80%;
+      width: 90%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -223,17 +221,18 @@ main {
         img {
           position: absolute;
           width: 15vw;
+          top: 50%;
           height: 40vh;
           border-radius: 5%;
           box-shadow: 0 0 0.5rem $primary;
           object-fit: cover;
-          transform: translateY(300px);
+          transform: translateY(60%);
         }
       }
     }
   }
 
-  .product-section {
+  .product {
     margin-top: 7rem;
 
     h3 {
@@ -249,7 +248,6 @@ main {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 8rem;
 
       div {
         margin-top: 5rem;
@@ -263,7 +261,7 @@ main {
         .oval {
           position: absolute;
           z-index: -100;
-          margin-top: -25%;
+          margin-top: -50%;
           width: 40%;
           height: 50%;
           background-color: rgba($accent, 0.1);
@@ -271,13 +269,13 @@ main {
         }
 
         img {
-          width: 10vw;
+          width: 8vw;
           border-radius: 5%;
           object-fit: cover;
         }
 
         h4 {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           width: 100%;
           color: $primary;
           margin: 0;
@@ -291,6 +289,188 @@ main {
           margin-top: 1rem;
           font-size: 1.25rem;
           color: black;
+        }
+      }
+    }
+  }
+
+  .contact {
+    flex-direction: row;
+    width: 80%;
+
+    p,
+    div,
+    ul {
+      margin: 0;
+    }
+
+    p {
+      font-family: "Dancing Script", cursive;
+      color: $secondary;
+      font-size: 2.35rem;
+      width: 20%;
+    }
+
+    div {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        object-fit: cover;
+        width: 10vw;
+        margin-bottom: 1rem;
+        filter: drop-shadow($primary 1px 1px 0.25rem);
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+
+        hr {
+          width: 100%;
+          color: rgba($accent, 0.5);
+        }
+
+        h3 {
+          margin: 0;
+          font-family: "Dancing Script", cursive;
+          color: $primary;
+          font-size: 3rem;
+        }
+      }
+
+      h2 {
+        font-family: "Poppins", sans-serif;
+        color: $background-secondary;
+        font-size: 2rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 20%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      li {
+        width: 100%;
+
+        a {
+          display: block;
+          padding: 0.5rem;
+          text-decoration: none;
+          font-size: 1.35rem;
+          color: $background-secondary;
+          transition: all 0.35s;
+
+          &:hover {
+            background-color: $background-secondary;
+            color: white;
+          }
+        }
+      }
+
+      hr {
+        margin: auto;
+        color: $primary;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    .homemade {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 5rem;
+
+      img {
+        width: 70vw;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        p {
+          width: 90%;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .featured {
+      div {
+        flex-direction: column;
+
+        div {
+          img {
+            width: 40vh;
+          }
+        }
+      }
+
+      a {
+        width: 50%;
+      }
+    }
+
+    .about {
+      margin-bottom: 1rem;
+
+      div {
+        flex-direction: column;
+        align-items: center;
+
+        div {
+          width: 100%;
+          margin-bottom: 0;
+          margin-top: 2rem;
+
+          img {
+            margin-top: 1rem;
+            position: relative;
+            transform: none;
+            width: 100%;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .product {
+      margin-top: 0;
+
+      div {
+        align-items: center;
+        flex-direction: column;
+
+        div {
+          width: 100%;
+          margin-top: 4rem;
+
+          .oval {
+            margin-top: -65%;
+            height: 40%;
+          }
+
+          img {
+            width: 25vw;
+          }
         }
       }
     }

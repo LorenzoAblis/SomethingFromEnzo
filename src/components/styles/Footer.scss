@@ -1,0 +1,85 @@
+@import "../../global.scss";
+
+footer {
+  height: 40vh;
+  background-color: $background-secondary;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+
+  section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    h2 {
+      color: white;
+      font-family: "Dancing Script", cursive;
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+    }
+
+    .contact {
+      justify-content: center;
+      gap: 1rem;
+
+      img {
+        width: 8vw;
+        object-fit: contain;
+      }
+
+      h2,
+      p {
+        margin: 0;
+      }
+
+      p {
+        color: rgba(white, 0.8);
+      }
+    }
+
+    .site-map ul {
+      flex-direction: column;
+      gap: 0.25rem;
+
+      li a {
+        text-decoration: none;
+        color: rgba(white, 0.8);
+        font-size: 1.35rem;
+        transition: color 0.15s;
+
+        &:hover {
+          color: rgba(black, 0.8);
+        }
+      }
+    }
+
+    .socials {
+      justify-content: initial;
+      h2 {
+        text-align: center;
+      }
+
+      ul {
+        gap: 1rem;
+
+        li a img {
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+}
