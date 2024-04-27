@@ -74,6 +74,7 @@ const Footer = () => {
           </ul>
         </div>
       </section>
+      <p>&copy; 2024 Something From Enzo. All rights reserved.</p>
     </footer>
   );
 };

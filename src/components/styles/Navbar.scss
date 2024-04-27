@@ -87,3 +87,56 @@ nav {
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  nav ul {
+    width: 80vw;
+    justify-content: space-between;
+    gap: 0rem;
+
+    li {
+      width: 1vw;
+
+      img {
+        margin-top: 0;
+        width: 3rem;
+      }
+    }
+
+    div {
+      gap: 4rem;
+
+      li a {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .sticky ul {
+    width: 80vw;
+    justify-content: space-between;
+    gap: 0rem;
+
+    li {
+      width: 1vw;
+
+      img {
+        width: 4rem;
+        filter: drop-shadow(black 0 0 0.15rem);
+        transform: none;
+
+        &:hover {
+          width: 4.5rem;
+        }
+      }
+    }
+
+    div {
+      gap: 4rem;
+
+      li a {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

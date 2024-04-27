@@ -46,21 +46,22 @@ const Home = () => {
     },
   ];
 
-  const team = [
+  const links = [
     {
-      name: "Rose",
-      image: "redvelvet",
-      shadow: "$secondary",
+      name: "Home",
+      link: "#",
     },
     {
-      name: "Enzo",
-      image: "redvelvet",
-      shadow: "$accent",
+      name: "Featured",
+      link: "#featured",
     },
     {
-      name: "Florence",
-      image: "redvelvet",
-      shadow: "$primary",
+      name: "History",
+      link: "#history",
+    },
+    {
+      name: "Products",
+      link: "#products",
     },
   ];
 
@@ -86,7 +87,7 @@ const Home = () => {
     <main>
       <div>
         <img src={images.home_image} alt="home image" className="home-image" />
-        {/* <Handwriting /> */}
+        <Handwriting />
       </div>
       <section className="homemade">
         <img src={images.homemade} alt="homemade" />
@@ -112,11 +113,11 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <Link to="gallery">View All Creations</Link>
+        <Link to="">View All Creations</Link>
       </section>
       <section className="info about" id="history">
         <h3>About Us</h3>
-        <h2>Where did it start?</h2>
+        <h2>How did it start?</h2>
         <div>
           {aboutUs.map((item, index) => (
             <div key={index}>
@@ -142,7 +143,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-      {/* <section className="info contact">
+      <section className="info contact">
         <p>Crafting delicious memories, one bite at a time.</p>
         <div>
           <img src={images["logo"]} alt="logo" />
@@ -154,24 +155,16 @@ const Home = () => {
           <h2>lablis228609@gmail.com</h2>
         </div>
         <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <hr />
-          <li>
-            <a href="#featured">Featured</a>
-          </li>
-          <hr />
-          <li>
-            <a href="#history">History</a>
-          </li>
-          <hr />
-          <li>
-            <a href="#products">Products</a>
-          </li>
-          <hr />
+          {links.map((link, index) => (
+            <>
+              <li key={index}>
+                <a href={link.link}>{link.name}</a>
+              </li>
+              <hr />
+            </>
+          ))}
         </ul>
-      </section> */}
+      </section>
     </main>
   );
 };
