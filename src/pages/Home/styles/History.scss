@@ -1,0 +1,95 @@
+@import "../../../global.scss";
+
+main {
+  .about {
+    background-color: $background-secondary;
+
+    h3 {
+      color: $accent;
+      margin-top: 5rem;
+    }
+
+    h2 {
+      color: white !important;
+    }
+
+    div {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+
+      div {
+        margin-top: 3rem;
+        padding: 1rem;
+        width: 22%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h4 {
+          font-size: 3rem;
+          color: $primary;
+          margin: 0;
+        }
+
+        p {
+          height: 20vh;
+          margin: 0;
+          font-size: 1rem;
+          color: $background;
+        }
+
+        img {
+          position: absolute;
+          width: 15vw;
+          top: 50%;
+          height: 40vh;
+          border-radius: 5%;
+          box-shadow: 0 0 0.5rem $primary;
+          object-fit: cover;
+          transform: translateY(40%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    .about {
+      margin-bottom: 1rem;
+
+      div {
+        flex-direction: row;
+        overflow: scroll;
+        align-items: center;
+        scroll-snap-type: x mandatory;
+        height: 10%;
+        flex-shrink: 0;
+        margin-bottom: 0;
+        gap: 0;
+
+        div {
+          scroll-snap-align: start;
+          overflow: visible;
+          width: 90%;
+          margin-bottom: 0;
+          margin-top: 1rem;
+
+          img {
+            margin-top: 1rem;
+            position: relative;
+            transform: none;
+            width: 100%;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+}

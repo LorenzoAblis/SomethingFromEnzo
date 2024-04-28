@@ -1,0 +1,127 @@
+@import "../../../global.scss";
+
+main {
+  .contact {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 4rem;
+
+    p,
+    div,
+    ul {
+      margin: 0;
+    }
+
+    p {
+      font-family: "Dancing Script", cursive;
+      color: $secondary;
+      font-size: 2.35rem;
+      width: 20%;
+    }
+
+    div {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        object-fit: cover;
+        width: 10vw;
+        margin-bottom: 1rem;
+        filter: drop-shadow($primary 1px 1px 0.25rem);
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+
+        hr {
+          width: 100%;
+          color: rgba($accent, 0.5);
+        }
+
+        h3 {
+          margin: 0;
+          font-family: "Dancing Script", cursive;
+          color: $primary;
+          font-size: 3rem;
+        }
+      }
+
+      h2 {
+        font-family: "Poppins", sans-serif;
+        color: $background-secondary;
+        font-size: 2rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 20%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      li {
+        width: 100%;
+
+        a {
+          display: block;
+          padding: 0.5rem;
+          text-decoration: none;
+          font-size: 1.35rem;
+          color: $background-secondary;
+          transition: all 0.35s;
+
+          &:hover {
+            background-color: $background-secondary;
+            color: white;
+          }
+        }
+      }
+
+      hr {
+        margin: auto;
+        color: $primary;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    .contact {
+      flex-direction: column;
+      margin-bottom: 3rem;
+
+      p,
+      div,
+      ul {
+        width: 100%;
+      }
+
+      div {
+        img {
+          margin-top: 2rem;
+          width: 30vw;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      ul {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

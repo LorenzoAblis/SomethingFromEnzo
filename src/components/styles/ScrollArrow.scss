@@ -7,6 +7,7 @@
   font-size: 2rem;
   margin-top: 1rem;
   margin-bottom: 4rem;
+  display: none;
 
   .arrow {
     position: absolute;
@@ -25,15 +26,21 @@
     @keyframes arrow1 {
       100% {
         opacity: 0;
-        left: 100%;
+        left: 80%;
       }
     }
 
     @keyframes arrow2 {
       100% {
         opacity: 0;
-        right: 100%;
+        right: 80%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .arrow-scroll {
+    display: block;
   }
 }

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./styles/Navbar.scss";
 import logo from "../assets/icons/logo.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const routes = [
     {
       name: "Gallery",
@@ -43,17 +45,21 @@ const Navbar = () => {
         <div>
           {routes.slice(0, routes.length / 2).map((route, index) => (
             <li key={index}>
-              <Link to={`/${route.route}`}>{route.name}</Link>
+              <Link to={`/SomethingFromEnzo/${route.route}`}>{route.name}</Link>
             </li>
           ))}
         </div>
         <li className="logo">
-          <img src={logo} alt="" />
+          <img
+            src={logo}
+            alt=""
+            onClick={() => navigate("/SomethingFromEnzo/#")}
+          />
         </li>
         <div>
           {routes.slice(routes.length / 2).map((route, index) => (
             <li key={index}>
-              <Link to={`/${route.route}`}>{route.name}</Link>
+              <Link to={`/SomethingFromEnzo/${route.route}`}>{route.name}</Link>
             </li>
           ))}
         </div>

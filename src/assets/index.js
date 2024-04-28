@@ -1,11 +1,21 @@
 // Cakes
 
 export { default as home_image } from "./cakes/home_image.jpg";
+export { default as gallery_image } from "./cakes/gallery_image.jpg";
 export { default as homemade } from "./cakes/homemade.jpg";
 export { default as redvelvet } from "./cakes/redvelvet.jpg";
 export { default as meibday } from "./cakes/meibday.jpg";
 export { default as macarons } from "./cakes/macarons.jpg";
+export { default as opera } from "./cakes/opera.jpg";
 export { default as chocolate } from "./cakes/chocolate.jpg";
+export { default as croissants } from "./cakes/croissants.jpg";
+export { default as eclairs } from "./cakes/eclairs.jpg";
+
+export { default as redvelvet2 } from "./cakes/redvelvet2.jpg";
+export { default as redvelvet3 } from "./cakes/redvelvet3.jpg";
+export { default as opera2 } from "./cakes/opera2.jpg";
+export { default as chocolate2 } from "./cakes/chocolate2.jpg";
+export { default as opera3 } from "./cakes/opera3.jpg";
 
 // Family
 

@@ -36,6 +36,7 @@ footer {
       list-style: none;
       padding: 0;
       display: flex;
+      justify-content: center;
     }
 
     .contact {
@@ -103,6 +104,10 @@ footer {
       .contact {
         img {
           width: 20vw;
+        }
+
+        p {
+          text-align: left;
         }
       }
     }
