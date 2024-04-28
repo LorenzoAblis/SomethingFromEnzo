@@ -87,6 +87,7 @@ const Home = () => {
     <main>
       <div>
         <img src={images.home_image} alt="home image" className="home-image" />
+        <div className="overlay"></div>
         <Handwriting />
       </div>
       <section className="homemade">
@@ -128,7 +129,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
       <section className="info product" id="products">
         <h3>Sweets</h3>
         <h2>What do we make?</h2>
