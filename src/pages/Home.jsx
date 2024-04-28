@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import * as images from "../assets";
 import Handwriting from "../assets/icons/Handwriting.jsx";
+import ScrollArrow from "../components/ScrollArrow.jsx";
 import "./styles/Home.scss";
 
 const Home = () => {
@@ -128,6 +129,7 @@ const Home = () => {
             </div>
           ))}
         </div>
+        <ScrollArrow />
       </section>
       <section className="info product" id="products">
         <h3>Sweets</h3>
