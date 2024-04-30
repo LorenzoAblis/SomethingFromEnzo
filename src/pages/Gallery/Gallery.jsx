@@ -1,4 +1,4 @@
-import { gallery_image } from "../../assets";
+import { meibday } from "../../assets";
 
 import "./styles/Gallery.scss";
 
@@ -9,11 +9,7 @@ const Gallery = () => {
   return (
     <main className="gallery-page">
       <div>
-        <img
-          src={gallery_image}
-          alt="gallery image"
-          className="gallery-image"
-        />
+        <img src={meibday} alt="gallery image" className="gallery-image" />
         <div className="overlay"></div>
         <h1 className="gallery-title">Gallery</h1>
       </div>

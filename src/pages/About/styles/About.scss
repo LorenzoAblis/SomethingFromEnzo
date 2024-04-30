@@ -91,3 +91,27 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .about-page {
+    .enzo {
+      h2 {
+        font-size: 5rem;
+      }
+
+      .enzo-details {
+        width: 75%;
+        .card {
+          font-size: 1.45rem;
+          gap: 4rem;
+
+          img {
+            object-fit: cover;
+            width: 30vw;
+            height: 40vh;
+          }
+        }
+      }
+    }
+  }
+}
