@@ -22,6 +22,7 @@ export { default as opera3 } from "./cakes/opera3.jpg";
 export { default as abt1 } from "./family/1977.jpg";
 export { default as abt2 } from "./family/2013.jpg";
 export { default as abt3 } from "./family/2018.jpg";
+export { default as enzo_about } from "./family/enzo_about.jpg";
 
 // Icons
 

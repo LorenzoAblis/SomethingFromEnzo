@@ -1,0 +1,93 @@
+@import "../../../global.scss";
+
+.about {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-bottom: 10vh;
+
+  .about-img-container {
+    margin-bottom: 3rem;
+
+    .overlay {
+      transform: translateY(-1vh);
+    }
+
+    .about-image {
+      width: 100vw;
+      object-fit: contain;
+      transform: scale(1);
+    }
+
+    .about-title {
+      position: absolute;
+      margin-top: 25vh;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -200%) scale(1);
+      height: 30vw;
+      width: 25rem;
+      z-index: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: "Dancing Script", cursive;
+      font-size: 4rem;
+      text-shadow: 0 0 1rem black;
+    }
+  }
+
+  .enzo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2,
+    h3,
+    h5 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .enzo-subtitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      h3 {
+        color: $background-secondary;
+      }
+
+      hr {
+        width: 2rem;
+        color: $background-secondary;
+        height: 100%;
+        margin: 0;
+      }
+    }
+
+    h2 {
+      color: $primary;
+      font-family: "Dancing Script", cursive;
+      font-size: 3.5rem;
+    }
+
+    .enzo-details {
+      .card {
+        margin-top: 1rem;
+        width: 90%;
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+
+        img {
+          width: 35vw;
+          object-fit: cover;
+          border-radius: 0.5rem;
+          box-shadow: 0.5rem 0.5rem 0 $accent;
+        }
+      }
+    }
+  }
+}
