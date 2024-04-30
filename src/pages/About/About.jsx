@@ -33,7 +33,7 @@ const About = () => {
   ];
 
   return (
-    <main className="about">
+    <main className="about-page">
       <div className="about-img-container">
         <img src={images.meibday} alt="about image" className="about-image" />
         <div className="overlay"></div>

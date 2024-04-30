@@ -1,0 +1,116 @@
+@import "../../../global.scss";
+
+.enzo {
+  display: flex;
+  flex-direction: column;
+
+  h2,
+  h3,
+  h5 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .enzo-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    h3 {
+      color: $background-secondary;
+    }
+
+    hr {
+      width: 3rem;
+      color: $background-secondary;
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  h2 {
+    color: $primary;
+    font-family: "Dancing Script", cursive;
+    font-size: 3rem;
+  }
+
+  h5 {
+    margin-top: 0.5rem;
+    color: rgba(black, 0.5);
+  }
+
+  .enzo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    .item-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .image-container {
+        display: flex;
+        overflow-x: scroll;
+        gap: 1rem;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+
+        img {
+          scroll-snap-align: start;
+          width: 100%;
+          border-radius: 0.5rem;
+          box-shadow: 5px 5px 0 $accent;
+        }
+      }
+
+      h4 {
+        margin-top: 0.75rem;
+        font-size: 2rem;
+        text-wrap: wrap;
+        text-align: center;
+        font-family: "Dancing Script", cursive;
+        color: $background-secondary;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .enzo {
+    align-items: center;
+
+    .enzo-subtitle {
+      hr {
+        height: 4px;
+        background-color: $background-secondary;
+        border: 0;
+      }
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 5rem;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+    }
+
+    .enzo-gallery {
+      width: 90%;
+      .item-card {
+        width: 30%;
+      }
+    }
+  }
+}
