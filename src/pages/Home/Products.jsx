@@ -25,7 +25,7 @@ const Products = () => {
     <section className="info product" id="products">
       <h3>Sweets</h3>
       <h2>What do we make?</h2>
-      <div>
+      <div id="product-scroll">
         {products.map((item, index) => (
           <div key={index}>
             <div className="oval"></div>
@@ -35,7 +35,7 @@ const Products = () => {
           </div>
         ))}
       </div>
-      <ScrollArrow />
+      <ScrollArrow idName="product-scroll" />
     </section>
   );
 };

@@ -30,7 +30,7 @@ const History = () => {
     <section className="info about" id="history">
       <h3>About Us</h3>
       <h2>How did it start?</h2>
-      <div>
+      <div id="history-scroll">
         {aboutUs.map((item, index) => (
           <div key={index}>
             <h4>{item.date}</h4>
@@ -39,7 +39,7 @@ const History = () => {
           </div>
         ))}
       </div>
-      <ScrollArrow />
+      <ScrollArrow idName="history-scroll" />
     </section>
   );
 };

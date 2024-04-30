@@ -72,7 +72,7 @@ const Gallery = () => {
           <hr />
         </div>
         <h2>Made by Enzo</h2>
-        <h5>( Sideways Scroll)</h5>
+        <h5>( Sideways Scroll )</h5>
         <div className="enzo-gallery">
           {enzo.map((item, index) => (
             <div className="item-card" key={index}>

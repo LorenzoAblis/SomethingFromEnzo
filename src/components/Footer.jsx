@@ -25,8 +25,12 @@ const Footer = () => {
 
   const sitemap = [
     {
-      name: "Gallery",
+      name: "Home",
       link: "",
+    },
+    {
+      name: "Gallery",
+      link: "gallery",
     },
     {
       name: "Contact",
@@ -42,6 +46,13 @@ const Footer = () => {
     },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer>
       <section>
@@ -56,7 +67,12 @@ const Footer = () => {
           <ul>
             {sitemap.map((site, index) => (
               <li key={index}>
-                <Link to="/SomethingFromEnzo">{site.name}</Link>
+                <Link
+                  to={`/SomethingFromEnzo/${site.link}`}
+                  onClick={scrollToTop}
+                >
+                  {site.name}
+                </Link>
               </li>
             ))}
           </ul>

@@ -70,6 +70,7 @@ main {
         flex-shrink: 0;
         margin-bottom: 0;
         gap: 0;
+        scroll-behavior: smooth;
 
         div {
           scroll-snap-align: start;

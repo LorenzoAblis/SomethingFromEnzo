@@ -39,27 +39,45 @@ const Navbar = () => {
     };
   }, [scroll]);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleLogoClick = () => {
+    navigate("/SomethingFromEnzo/#");
+    scrollToTop();
+  };
+
   return (
     <nav className={`${scroll ? "sticky" : ""}`}>
       <ul>
         <div>
           {routes.slice(0, routes.length / 2).map((route, index) => (
             <li key={index}>
-              <Link to={`/SomethingFromEnzo/${route.route}`}>{route.name}</Link>
+              <Link
+                to={`/SomethingFromEnzo/${route.route}`}
+                onClick={scrollToTop}
+              >
+                {route.name}
+              </Link>
             </li>
           ))}
         </div>
         <li className="logo">
-          <img
-            src={logo}
-            alt=""
-            onClick={() => navigate("/SomethingFromEnzo/#")}
-          />
+          <img src={logo} alt="" onClick={handleLogoClick} />
         </li>
         <div>
           {routes.slice(routes.length / 2).map((route, index) => (
             <li key={index}>
-              <Link to={`/SomethingFromEnzo/${route.route}`}>{route.name}</Link>
+              <Link
+                to={`/SomethingFromEnzo/${route.route}`}
+                onClick={scrollToTop}
+              >
+                {route.name}
+              </Link>
             </li>
           ))}
         </div>

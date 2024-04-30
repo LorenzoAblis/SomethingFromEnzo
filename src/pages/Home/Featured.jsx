@@ -20,6 +20,14 @@ const Featured = () => {
       image: macarons,
     },
   ];
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="info featured" id="featured">
       <h3>Featured</h3>
@@ -33,7 +41,9 @@ const Featured = () => {
           </div>
         ))}
       </div>
-      <Link to="/SomethingFromEnzo/gallery">View All Creations</Link>
+      <Link to="/SomethingFromEnzo/gallery" onClick={scrollToTop}>
+        View All Creations
+      </Link>
     </section>
   );
 };
