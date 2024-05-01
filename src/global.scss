@@ -13,8 +13,12 @@ $text: #000000;
 }
 
 body {
-  background-color: $background;
+  background-color: rgba(black, 0.9);
   margin: 0;
   width: 100%;
   overflow-x: hidden;
+}
+
+main {
+  background-color: $background;
 }
