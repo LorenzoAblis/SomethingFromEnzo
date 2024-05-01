@@ -6,13 +6,15 @@ export { default as redvelvet } from "./cakes/redvelvet.jpg";
 export { default as meibday } from "./cakes/meibday.jpg";
 export { default as macarons } from "./cakes/macarons.jpg";
 export { default as chocolate } from "./cakes/chocolate.jpg";
+export { default as momday } from "./cakes/momday.jpg";
 
 // Family
 
 export { default as abt1 } from "./family/1977.jpg";
 export { default as abt2 } from "./family/2013.jpg";
 export { default as abt3 } from "./family/2018.jpg";
-export { default as enzo_about } from "./family/enzo_about.jpg";
+export { default as enzo_intro } from "./family/enzo_intro.jpg";
+export { default as flo_intro } from "./family/flo_intro.jpg";
 
 // Icons
 
