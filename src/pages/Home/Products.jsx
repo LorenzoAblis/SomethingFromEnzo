@@ -28,7 +28,7 @@ const Products = () => {
       <div id="product-scroll">
         {products.map((item, index) => (
           <div key={index}>
-            <div className="oval"></div>
+            <div className="oval">wdwd</div>
             <img src={item.image} alt={item.image} />
             <h4>{item.name}</h4>
             <p>{item.text}</p>
