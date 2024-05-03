@@ -1,6 +1,7 @@
 import { cake, muffin, croissant } from "../../assets/index.js";
 import ScrollArrow from "../../components/ScrollArrow.jsx";
 import "./styles/Products.scss";
+import SectionTitle from "../../components/SectionTitle.jsx";
 
 const Products = () => {
   const products = [
@@ -23,12 +24,11 @@ const Products = () => {
 
   return (
     <section className="info product" id="products">
-      <h3>Sweets</h3>
-      <h2>What do we make?</h2>
-      <div id="product-scroll">
+      <SectionTitle title="What do we make?" subtitle="Sweets" />
+      <div id="product-scroll" className="product-scroll">
         {products.map((item, index) => (
-          <div key={index}>
-            <div className="oval">wdwd</div>
+          <div key={index} className="product-card">
+            <div className="oval"></div>
             <img src={item.image} alt={item.image} />
             <h4>{item.name}</h4>
             <p>{item.text}</p>

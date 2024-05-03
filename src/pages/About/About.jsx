@@ -8,11 +8,7 @@ import Closing from "./Closing";
 const About = () => {
   return (
     <main className="about-page">
-      <div className="about-img-container">
-        <img src={meibday} alt="about image" className="about-image" />
-        <div className="overlay"></div>
-        <h1 className="about-title">About</h1>
-      </div>
+      <PageTitle title="About" img={meibday} />
       <Introduction />
       <History />
       <Closing />

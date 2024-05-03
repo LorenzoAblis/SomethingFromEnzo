@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { redvelvet, meibday, macarons } from "../../assets/index.js";
 import "./styles/Featured.scss";
+import SectionTitle from "../../components/SectionTitle.jsx";
 
 const Featured = () => {
   const featured = [
@@ -30,11 +31,10 @@ const Featured = () => {
 
   return (
     <section className="info featured" id="featured">
-      <h3>Featured</h3>
-      <h2>Sweet Perfection</h2>
-      <div>
+      <SectionTitle title="Sweet Perfection" subtitle="Featured" />
+      <div className="featured-cards">
         {featured.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="featured-card">
             <img src={item.image} alt={item.image} />
             <h4>{item.title}</h4>
             <p>{item.baker}</p>

@@ -1,6 +1,7 @@
 import { abt1, abt2, abt3, chocolate } from "../../assets/index.js";
 import ScrollArrow from "../../components/ScrollArrow.jsx";
 import "./styles/History.scss";
+import SectionTitle from "../../components/SectionTitle.jsx";
 
 const History = () => {
   const aboutUs = [
@@ -28,11 +29,10 @@ const History = () => {
 
   return (
     <section className="info about" id="history">
-      <h3>About Us</h3>
-      <h2>How did it start?</h2>
-      <div id="history-scroll">
+      <SectionTitle title="How did it start?" subtitle="About Us" />
+      <div id="history-scroll" className="history-cards">
         {aboutUs.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="history-card">
             <h4>{item.date}</h4>
             <p>{item.text}</p>
             <img src={item.image} alt={item.image} />

@@ -10,4 +10,5 @@ export { default as opera } from "./opera.jpg";
 export { default as homemade } from "../homemade.jpg";
 export { default as redvelvet } from "../redvelvet.jpg";
 export { default as macarons } from "../macarons.jpg";
+export { default as gallery_image } from "../gallery_image.jpg";
 export { default as chocolate } from "../chocolate.jpg";

@@ -1,5 +1,6 @@
 import { abt1, abt2, abt3, momday, redvelvet } from "../../assets";
 import "./styles/History.scss";
+import SectionTitle from "../../components/SectionTitle";
 
 const History = () => {
   const timeline = [
@@ -42,12 +43,7 @@ const History = () => {
 
   return (
     <section className="history">
-      <div className="history-subtitle">
-        <hr />
-        <h3>History</h3>
-        <hr />
-      </div>
-      <h2>Our Story</h2>
+      <SectionTitle title="Our Story" subtitle="History" />
       <div className="time-cards">
         {timeline.map((time, index) => (
           <div className="time-card" key={index}>

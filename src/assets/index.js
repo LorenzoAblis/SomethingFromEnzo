@@ -5,6 +5,7 @@ export { default as homemade } from "./cakes/homemade.jpg";
 export { default as redvelvet } from "./cakes/redvelvet.jpg";
 export { default as meibday } from "./cakes/meibday.jpg";
 export { default as macarons } from "./cakes/macarons.jpg";
+export { default as gallery_image } from "./cakes/gallery_image.jpg";
 export { default as chocolate } from "./cakes/chocolate.jpg";
 export { default as momday } from "./cakes/momday.jpg";
 

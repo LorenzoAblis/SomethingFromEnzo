@@ -1,18 +1,15 @@
-import { meibday } from "../../assets";
+import { gallery_image } from "../../assets";
 
 import "./styles/Gallery.scss";
 
+import PageTitle from "../../components/PageTitle";
 import Bakers from "./Bakers";
 import Enzo from "./Enzo";
 
 const Gallery = () => {
   return (
     <main className="gallery-page">
-      <div>
-        <img src={meibday} alt="gallery image" className="gallery-image" />
-        <div className="overlay"></div>
-        <h1 className="gallery-title">Gallery</h1>
-      </div>
+      <PageTitle title="Gallery" img={gallery_image} />
       <Bakers />
       <Enzo />
     </main>

@@ -1,5 +1,6 @@
 import * as images from "../../assets/cakes/enzo";
 import "./styles/Enzo.scss";
+import SectionTitle from "../../components/SectionTitle";
 
 const Enzo = () => {
   const enzo = [
@@ -31,12 +32,7 @@ const Enzo = () => {
 
   return (
     <section className="enzo" id="enzo">
-      <div className="enzo-subtitle">
-        <hr />
-        <h3>Confectionary</h3>
-        <hr />
-      </div>
-      <h2>Made by Enzo</h2>
+      <SectionTitle title="Made by Enzo" subtitle="Confectionary" />
       <h5>( Sideways Scroll )</h5>
       <div className="enzo-gallery">
         {enzo.map((item, index) => (

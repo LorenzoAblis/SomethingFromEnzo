@@ -1,0 +1,31 @@
+.page-title-container {
+  margin-bottom: 1rem;
+
+  .overlay {
+    transform: translateY(-1vh);
+  }
+
+  img {
+    width: 100vw;
+    object-fit: contain;
+    transform: scale(1);
+  }
+
+  h1 {
+    position: absolute;
+    margin-top: 25vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -200%) scale(1);
+    height: 30vw;
+    width: 25rem;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Dancing Script", cursive;
+    font-size: 4rem;
+    text-shadow: 0 0 1rem black;
+  }
+}
