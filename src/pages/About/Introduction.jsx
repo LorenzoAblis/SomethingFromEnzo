@@ -29,11 +29,20 @@ const Introduction = () => {
       </div>
       <div className="intro-cards">
         {intros.map((person, index) => (
-          <div key={index} className="intro-card">
-            <h2>Somethin&apos; About {person.name}</h2>
-            <img src={person.image} alt={`${person.name} image`} />
-            <p>{person.text}</p>
-          </div>
+          <>
+            <div key={index} className="intro-card">
+              <h2>Somethin&apos; About {person.name}</h2>
+              <img src={person.image} alt={`${person.name} image`} />
+              <p>{person.text}</p>
+            </div>
+            <div key={index} className="intro-card-desktop">
+              <img src={person.image} alt={`${person.name} image`} />
+              <div className="card-text">
+                <h2>Somethin&apos; About {person.name}</h2>
+                <p>{person.text}</p>
+              </div>
+            </div>
+          </>
         ))}
       </div>
     </section>

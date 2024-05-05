@@ -55,7 +55,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <section>
+      <section className="main-footer">
         <div className="contact">
           <img src={images["logo"]} alt="logo" />
           <h2>Contact Info</h2>

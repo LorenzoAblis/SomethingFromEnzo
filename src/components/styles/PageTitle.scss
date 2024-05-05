@@ -37,3 +37,22 @@
     text-shadow: 0 0 1rem black;
   }
 }
+
+@media (min-width: 1024px) {
+  .page-title-container {
+    .overlay {
+      height: 100vh;
+      transform: none;
+    }
+
+    h1 {
+      margin-top: 90vh;
+      font-size: 10rem;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100vh;
+    }
+  }
+}

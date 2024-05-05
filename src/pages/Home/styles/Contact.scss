@@ -1,107 +1,137 @@
 @import "../../../global.scss";
 
-main {
-  .contact {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    flex-direction: column;
-    margin-bottom: 3rem;
+.contact {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  flex-direction: column;
+  margin-bottom: 3rem;
 
+  p,
+  .email,
+  .page-map {
+    margin: 0;
+    width: 100%;
+  }
+
+  p {
+    font-family: "Dancing Script", cursive;
+    color: $secondary;
+    font-size: 2.35rem;
+    width: 100%;
+  }
+
+  .email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      object-fit: cover;
+      margin-bottom: 1rem;
+      filter: drop-shadow($primary 1px 1px 0.25rem);
+      margin-top: 2rem;
+      width: 30vw;
+    }
+
+    .questions {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+
+      hr {
+        width: 15%;
+        height: 0.2rem;
+        background-color: rgba($accent, 0.5);
+        border: 0;
+      }
+
+      h3 {
+        margin: 0;
+        font-family: "Dancing Script", cursive;
+        color: $primary;
+        font-size: 3rem;
+      }
+    }
+
+    h2 {
+      font-family: "Poppins", sans-serif;
+      color: $background-secondary;
+      font-size: 1.5rem;
+    }
+  }
+
+  .page-map {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    li {
+      width: 100%;
+
+      a {
+        display: block;
+        padding: 0.5rem;
+        text-decoration: none;
+        font-size: 1.35rem;
+        color: $background-secondary;
+        transition: all 0.35s;
+
+        &:hover {
+          background-color: $background-secondary;
+          color: white;
+        }
+      }
+    }
+
+    hr {
+      margin: auto;
+      width: 100%;
+      height: 0.2rem;
+      background-color: $primary;
+      border: 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    flex-direction: row;
     p,
     .email,
     .page-map {
-      margin: 0;
-      width: 100%;
+      flex-shrink: 1;
     }
 
     p {
-      font-family: "Dancing Script", cursive;
-      color: $secondary;
-      font-size: 2.35rem;
-      width: 100%;
+      font-size: 3rem;
     }
 
     .email {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-
       img {
-        object-fit: cover;
         width: 10vw;
-        margin-bottom: 1rem;
-        filter: drop-shadow($primary 1px 1px 0.25rem);
-        margin-top: 2rem;
-        width: 30vw;
       }
 
-      .questions {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
-
-        hr {
-          width: 15%;
-          height: 0.2rem;
-          background-color: rgba($accent, 0.5);
-          border: 0;
-        }
-
-        h3 {
-          margin: 0;
-          font-family: "Dancing Script", cursive;
-          color: $primary;
-          font-size: 3rem;
-        }
+      .questions h3 {
+        font-size: 4rem;
       }
 
       h2 {
-        font-family: "Poppins", sans-serif;
-        color: $background-secondary;
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
     }
 
-    .page-map {
-      list-style: none;
-      padding: 0;
-      width: 100%;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 2rem;
-
-      li {
-        width: 100%;
-
-        a {
-          display: block;
-          padding: 0.5rem;
-          text-decoration: none;
-          font-size: 0.8rem;
-          color: $background-secondary;
-          transition: all 0.35s;
-
-          &:hover {
-            background-color: $background-secondary;
-            color: white;
-          }
-        }
-      }
-
-      hr {
-        margin: auto;
-        width: 100%;
-        height: 0.2rem;
-        background-color: $primary;
-        border: 0;
-      }
+    .page-map li a {
+      font-size: 1.5rem;
     }
   }
 }

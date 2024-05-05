@@ -37,3 +37,12 @@
     width: 90%;
   }
 }
+
+@media (min-width: 1024px) {
+  .closing {
+    p {
+      width: 50%;
+      font-size: 1.35rem;
+    }
+  }
+}

@@ -38,3 +38,30 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .history {
+    .time-cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5rem;
+
+      .time-card {
+        width: 25%;
+        height: 90vh;
+
+        img {
+          width: 25vw;
+          height: 40vh;
+          object-fit: cover;
+        }
+
+        p {
+          width: 100%;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,121 +1,142 @@
 @import "../../global.scss";
 
 footer {
-  height: 50vh;
-  background-color: $background-secondary;
   display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $background-secondary;
+  padding-bottom: 2rem;
 
-  p {
-    text-align: center;
-    color: white;
-  }
-
-  section {
+  .main-footer {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
 
     h2 {
-      color: white;
       font-family: "Dancing Script", cursive;
       font-size: 2.5rem;
-      margin-bottom: 0;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
+      color: white;
+      margin: 0;
     }
 
     .contact {
-      justify-content: center;
-      gap: 1rem;
+      width: 100%;
+      margin-top: 2rem;
 
       img {
-        margin: auto;
-        width: 8vw;
-        object-fit: contain;
-      }
-
-      h2,
-      p {
-        margin: 0;
+        width: 25vw;
+        margin-bottom: 2rem;
       }
 
       p {
-        color: rgba(white, 0.8);
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        color: rgba(white, 0.75);
+        text-align: left;
+        font-family: "Poppins", sans-serif;
       }
     }
 
-    .site-map ul {
-      flex-direction: column;
-      gap: 0.25rem;
+    .site-map {
+      width: 100%;
 
-      li a {
-        text-decoration: none;
-        color: rgba(white, 0.8);
-        font-size: 1.35rem;
-        transition: color 0.15s;
+      h2 {
+        text-align: left;
+      }
 
-        &:hover {
-          color: rgba(black, 0.8);
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li a {
+          text-decoration: none;
+          color: rgba(white, 0.75);
+          font-size: 1.5rem;
         }
       }
     }
 
     .socials {
-      justify-content: initial;
+      margin-top: 1rem;
+      width: 100%;
 
       h2 {
         text-align: center;
       }
 
       ul {
-        gap: 1rem;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-between;
 
-        li a img {
-          width: 2.5rem;
+        li {
+          flex-shrink: 1;
+
+          a img {
+            width: 10vw;
+          }
         }
       }
     }
   }
-}
 
-@media only screen and (max-width: 768px) {
-  footer {
-    height: 120vh;
-
-    section {
-      margin-top: 1rem;
-      flex-direction: column;
-
-      .contact {
-        img {
-          width: 20vw;
-        }
-
-        p {
-          text-align: left;
-        }
-      }
-    }
+  p {
+    text-align: center;
+    color: white;
+    margin: 0;
+    margin-top: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   footer {
-    height: 55vh;
+    justify-content: space-between;
+    .main-footer {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 90%;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 30%;
+
+        img {
+          width: 10vw;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+
+      .site-map {
+        width: 20%;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+      }
+
+      .socials {
+        height: 40vh;
+        width: 20%;
+
+        ul li a img {
+          width: 3.5vw;
+        }
+      }
+    }
   }
 }
