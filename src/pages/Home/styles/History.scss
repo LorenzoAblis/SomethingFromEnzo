@@ -77,22 +77,26 @@
 }
 
 @media (min-width: 1024px) {
-  .about .history-cards .history-card {
-    flex-shrink: 1;
+  .about .history-cards {
+    overflow: visible;
 
-    p {
-      padding-bottom: 10rem;
-    }
+    .history-card {
+      position: relative;
+      flex-shrink: 1;
 
-    img {
-      position: absolute;
-      width: 20vw;
-      top: 50%;
-      height: 40vh;
-      border-radius: 5%;
-      box-shadow: 0 0 0.5rem $primary;
-      object-fit: cover;
-      transform: translateY(700%);
+      p {
+        padding-bottom: 10rem;
+      }
+
+      img {
+        position: absolute;
+        width: 20vw;
+        top: 50%;
+        height: 40vh;
+        border-radius: 5%;
+        box-shadow: 0 0 0.5rem $primary;
+        object-fit: cover;
+      }
     }
   }
 }

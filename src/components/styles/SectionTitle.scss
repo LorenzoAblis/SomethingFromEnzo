@@ -49,3 +49,15 @@
     }
   }
 }
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .section-header {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .section-header {
+    flex-direction: column;
+  }
+}
