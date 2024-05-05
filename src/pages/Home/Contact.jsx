@@ -24,16 +24,16 @@ const Contact = () => {
   return (
     <section className="contact">
       <p>Crafting delicious memories, one bite at a time.</p>
-      <div>
+      <div className="email">
         <img src={logo} alt="logo" />
-        <div>
+        <div className="questions">
           <hr />
           <h3>Questions?</h3>
           <hr />
         </div>
         <h2>lablis228609@gmail.com</h2>
       </div>
-      <ul>
+      <ul className="page-map">
         {links.map((link, index) => (
           <>
             <li key={index}>

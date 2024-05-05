@@ -17,7 +17,7 @@
     }
 
     hr {
-      width: 2rem;
+      width: 2.5rem;
       height: 0.2rem;
       background-color: $background-secondary;
       border: 0;
@@ -29,5 +29,23 @@
     color: $primary;
     font-family: "Dancing Script", cursive;
     font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-header {
+    .section-subtitle {
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      hr {
+        width: 3rem;
+      }
+    }
+
+    h2 {
+      font-size: 4rem !important;
+    }
   }
 }

@@ -11,7 +11,7 @@ const Landing = () => {
         <div className="overlay"></div>
         <Handwriting />
       </div>
-      <section className="homemade">
+      <section className="homemade hidden-on-desktop">
         <SectionTitle title="Homemade Deliciousness" subtitle="Welcome" />
         <img src={homemade} alt="homemade" />
         <p>
@@ -19,6 +19,19 @@ const Landing = () => {
           love. From meticulously designed cakes to whimsical cupcakes, each
           piece showcases my dedication to craftsmanship and passion for baking.
         </p>
+      </section>
+      <section className="homemade hidden-on-mobile">
+        <img src={homemade} alt="homemade" />
+        <div className="homemade-text">
+          <SectionTitle title="Homemade Deliciousness" subtitle="Welcome" />
+
+          <p>
+            Welcome to Something From Enzo, where every creation is a labor of
+            love. From meticulously designed cakes to whimsical cupcakes, each
+            piece showcases my dedication to craftsmanship and passion for
+            baking.
+          </p>
+        </div>
       </section>
     </>
   );

@@ -16,9 +16,20 @@ body {
   background-color: rgba(black, 0.9);
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
 }
 
 main {
   background-color: $background;
+}
+
+@media (max-width: 768px) {
+  .hidden-on-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden-on-desktop {
+    display: none;
+  }
 }

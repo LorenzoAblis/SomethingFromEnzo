@@ -59,3 +59,23 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .featured {
+    .featured-cards {
+      margin-top: 3rem;
+      width: 90%;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .featured-card {
+        img {
+          width: 55vh;
+        }
+      }
+    }
+    a {
+      width: 15%;
+    }
+  }
+}

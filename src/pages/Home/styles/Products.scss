@@ -3,12 +3,10 @@
 .product {
   margin-top: 0;
   margin-bottom: 2rem !important;
-  overflow-x: hidden;
 
   .product-scroll {
     width: 90%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     border-radius: 1rem;
     gap: 1rem;
@@ -20,8 +18,6 @@
     scroll-behavior: smooth;
 
     .product-card {
-      padding: 1rem;
-      width: 30%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -32,16 +28,16 @@
       width: 100%;
       margin-top: 1rem;
       padding: 0;
+      position: relative;
 
       .oval {
         position: absolute;
         z-index: 0;
-        margin-top: -50%;
         background-color: rgba($accent, 0.1);
         border-radius: 50%;
-        margin-top: -55%;
+        margin-top: -65%;
         width: 40%;
-        height: 25%;
+        height: 35%;
       }
 
       img {
@@ -73,46 +69,29 @@
   }
 }
 
-// @media only screen and (max-width: 768px) {
-//   .product {
-//     margin-top: 0;
-//     margin-bottom: 2rem !important;
+@media (min-width: 1024px) {
+  .product {
+    margin-top: 6rem;
 
-//     div {
-//       align-items: center;
-//       flex-direction: row;
-//       overflow-x: scroll;
-//       overflow-y: hidden;
-//       scroll-snap-type: x mandatory;
-//       scroll-behavior: smooth;
+    .product-scroll {
+      .product-card {
+        flex-shrink: 1;
+        padding-top: 1rem;
 
-//       div {
-//         scroll-snap-align: start;
-//         overflow-x: hidden;
-//         flex-shrink: 0;
-//         width: 100%;
-//         margin-top: 2rem;
-//         padding: 0;
+        .oval {
+          height: 50%;
+          width: 55%;
+          margin-top: -55%;
+        }
 
-//         .oval {
-//           margin-top: -70%;
-//           width: 40%;
-//           height: 35%;
-//         }
+        h4 {
+          padding-top: 2rem;
+        }
 
-//         h4 {
-//           margin-top: 2rem;
-//         }
-
-//         img {
-//           margin-top: 2rem;
-//           width: 25vw;
-//         }
-
-//         p {
-//           margin-bottom: 10vh;
-//         }
-//       }
-//     }
-//   }
-// }
+        img {
+          width: 10vw;
+        }
+      }
+    }
+  }
+}
