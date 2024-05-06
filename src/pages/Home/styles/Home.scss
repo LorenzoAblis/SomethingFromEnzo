@@ -8,30 +8,30 @@ main {
 
   section {
     display: flex;
-    width: 100%;
+    width: 95%;
+  }
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
   }
 
-  .info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 5rem;
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2 {
-      font-family: "Dancing Script", cursive;
-      color: $primary;
-      font-size: 4rem;
-      margin: 0;
-    }
+  h2 {
+    font-family: "Dancing Script", cursive;
+    color: $primary;
+    font-size: 4rem;
+    margin: 0;
   }
 }

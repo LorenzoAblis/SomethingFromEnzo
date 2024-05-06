@@ -28,7 +28,7 @@
     margin: 0;
     color: $primary;
     font-family: "Dancing Script", cursive;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -47,12 +47,6 @@
     h2 {
       font-size: 4rem !important;
     }
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-  .section-header {
-    flex-direction: row;
   }
 }
 

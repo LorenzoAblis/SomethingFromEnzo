@@ -18,7 +18,7 @@
       align-items: center;
 
       img {
-        width: 45vh;
+        width: 80vw;
         border-radius: 5%;
         box-shadow: 10px 10px 0 $primary;
         transition: box-shadow 0.35s;
@@ -56,6 +56,34 @@
       background-color: $primary;
       color: white;
       box-shadow: 0 0 0.35rem black;
+    }
+  }
+}
+
+@media (min-width: 620px) and (max-width: 767px) {
+  .featured .featured-cards .featured-card img {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .featured .featured-cards {
+    flex-direction: row;
+    .featured-card {
+      width: 30%;
+      height: 100%;
+
+      h4 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      img {
+        width: 20vw;
+      }
     }
   }
 }

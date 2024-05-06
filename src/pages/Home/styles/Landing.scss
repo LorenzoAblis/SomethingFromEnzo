@@ -22,12 +22,12 @@
 
   .handwriting {
     position: absolute;
-    margin-top: 10vh;
+    margin-top: 20vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -100%) scale(2);
     height: 30vw;
-    width: 50vw;
+    width: 10rem;
     z-index: 500;
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@
   margin-bottom: 2rem;
 
   img {
-    width: 70vw;
+    width: 60vw;
     object-fit: cover;
     border-radius: 5%;
     box-shadow: 10px 10px 0 $background-secondary;
@@ -67,7 +67,13 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 445px) and (max-width: 767px) {
+  .handwriting-title .handwriting {
+    width: 13rem;
+  }
+}
+
+@media (min-width: 768px) {
   .handwriting-title {
     .overlay {
       transform: translateY(-1vh);
@@ -79,7 +85,7 @@
     }
 
     .handwriting {
-      margin-top: 30vh;
+      margin-top: 30vw;
       width: 30vw;
       height: 20vw;
     }
@@ -97,7 +103,7 @@
 
     .homemade-text {
       p {
-        font-size: 1.35rem;
+        font-size: 1rem;
       }
     }
   }
@@ -107,7 +113,16 @@
   .handwriting-title {
     .handwriting {
       width: 35vw;
-      margin-top: 15vh;
+      margin-top: 15vw;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .handwriting-title {
+    .handwriting {
+      width: 35vw;
+      margin-top: 15vw;
     }
   }
 }

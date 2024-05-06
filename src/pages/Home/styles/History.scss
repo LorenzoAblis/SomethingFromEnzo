@@ -76,6 +76,21 @@
   }
 }
 
+@media (min-width: 445px) and (max-width: 768px) {
+  .about .history-cards {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about .history-cards {
+    gap: 1rem;
+    .history-card {
+      width: 45%;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .about .history-cards {
     overflow: visible;
@@ -89,13 +104,10 @@
       }
 
       img {
-        position: absolute;
-        width: 20vw;
-        top: 50%;
+        position: relative;
+        width: 100%;
         height: 40vh;
-        border-radius: 5%;
-        box-shadow: 0 0 0.5rem $primary;
-        object-fit: cover;
+        margin-top: -30%;
       }
     }
   }
