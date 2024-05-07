@@ -76,7 +76,7 @@
 @media (min-width: 768px) {
   .handwriting-title {
     .overlay {
-      transform: translateY(-1vh);
+      transform: translateY(-0.75vh);
     }
 
     .home-image {
@@ -121,7 +121,7 @@
 @media (min-width: 1025px) {
   .handwriting-title {
     .handwriting {
-      width: 35vw;
+      width: 30vw;
       margin-top: 15vw;
     }
   }

@@ -24,6 +24,7 @@ footer {
     .contact {
       width: 100%;
       margin-top: 2rem;
+      gap: 0rem;
 
       img {
         width: 25vw;
@@ -133,8 +134,13 @@ footer {
         height: 40vh;
         width: 20%;
 
-        ul li a img {
-          width: 3.5vw;
+        ul {
+          justify-content: center;
+
+          li a img {
+            width: 2vw;
+            margin: 0 0.5rem;
+          }
         }
       }
     }

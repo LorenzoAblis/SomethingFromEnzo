@@ -7,6 +7,7 @@
   width: 90%;
   flex-direction: column;
   margin-bottom: 3rem;
+  gap: 3rem;
 
   p,
   .email,
@@ -61,7 +62,7 @@
     h2 {
       font-family: "Poppins", sans-serif;
       color: $background-secondary;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
     }
   }
 

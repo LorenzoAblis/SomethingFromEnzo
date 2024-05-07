@@ -1,7 +1,7 @@
 @import "../../../global.scss";
 
 .product {
-  margin-top: 0;
+  margin-top: 5rem;
   margin-bottom: 2rem !important;
 
   .product-scroll {
@@ -13,7 +13,7 @@
     align-items: center;
     flex-direction: row;
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 
@@ -24,24 +24,14 @@
       justify-content: center;
       scroll-snap-align: start;
       overflow-x: hidden;
+      overflow-y: hidden;
       flex-shrink: 0;
       width: 100%;
-      margin-top: 1rem;
       padding: 0;
+      height: 30rem;
       position: relative;
 
-      .oval {
-        position: absolute;
-        z-index: 0;
-        background-color: rgba($accent, 0.1);
-        border-radius: 50%;
-        margin-top: -65%;
-        width: 40%;
-        height: 35%;
-      }
-
       img {
-        margin-top: 2rem;
         width: 25vw;
         border-radius: 5%;
         z-index: 200;
@@ -77,6 +67,7 @@
       .product-card {
         flex-shrink: 1;
         padding-top: 1rem;
+        height: 40rem;
 
         .oval {
           height: 50%;
