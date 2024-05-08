@@ -37,7 +37,15 @@
       animation: dash 25s linear forwards;
 
       @keyframes dash {
+        from {
+          stroke: white;
+          stroke-dashoffset: 6603.2890625;
+        }
+        13% {
+          stroke: #fe7a98;
+        }
         to {
+          stroke: #fe7a98;
           stroke-dashoffset: 0;
         }
       }

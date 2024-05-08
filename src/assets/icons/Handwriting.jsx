@@ -22,16 +22,10 @@ const Handwriting = () => {
           <feMergeNode in="SourceGraphic" />{" "}
         </feMerge>
       </filter>
-      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="35%" style={{ stopColor: pink, stopOpacity: 1 }} />
-        <stop offset="50%" style={{ stopColor: white, stopOpacity: 1 }} />
-        <stop offset="60%" style={{ stopColor: pink, stopOpacity: 1 }} />
-      </linearGradient>
       <g filter="url(#dropshadow)">
         <path
           transform="translate(35, 0)"
           id="animated-path"
-          stroke="url(#grad)"
           strokeWidth="3"
           strokeDasharray="6603.2890625"
           strokeDashoffset="6603.2890625"
