@@ -1,9 +1,15 @@
+import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
+
 import { abt1, abt2, abt3, chocolate } from "../../assets/index.js";
 import ScrollArrow from "../../components/ScrollArrow.jsx";
 import "./styles/History.scss";
 import SectionTitle from "../../components/SectionTitle.jsx";
 
 const History = () => {
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
+  const [historyAnimated, setHistoryAnimated] = useState(false);
+
   const aboutUs = [
     {
       date: "1977",
@@ -27,12 +33,38 @@ const History = () => {
     },
   ];
 
+  useEffect(() => {
+    if (myElementIsVisible && !historyAnimated) {
+      setHistoryAnimated(true);
+    }
+  }, [myElementIsVisible, historyAnimated]);
+
   return (
-    <section className="info about" id="history">
+    <section
+      className={`info about ${
+        historyAnimated && myElementIsVisible ? "animate-history" : ""
+      }`}
+      id="history"
+      ref={myRef}
+    >
       <SectionTitle title="How did it start?" subtitle="About Us" />
       <div id="history-scroll" className="history-cards">
         {aboutUs.map((item, index) => (
-          <div key={index} className="history-card">
+          <div
+            key={index}
+            className={`history-card ${
+              historyAnimated && myElementIsVisible ? "animate-cards" : ""
+            }`}
+            style={{
+              animationDelay: `${
+                index === 1 || index === 2
+                  ? 1200
+                  : index === 0 || index === 3
+                  ? 1800
+                  : 0
+              }ms`,
+            }}
+          >
             <h4>{item.date}</h4>
             <p>{item.text}</p>
             <img src={item.image} alt={item.image} />

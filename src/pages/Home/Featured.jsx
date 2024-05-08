@@ -1,4 +1,3 @@
-import { useRef, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { Link } from "react-router-dom";

@@ -1,5 +1,31 @@
 @import "../../../global.scss";
 
+@keyframes animate-cards {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes animate-history {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animate-history {
+  animation: animate-history 1.5s forwards;
+}
+
 .about {
   background-color: $background-secondary;
   margin-bottom: 1rem;
@@ -42,6 +68,7 @@
       width: 90%;
       margin-bottom: 0;
       margin-top: 1rem;
+      opacity: 0;
 
       h4 {
         font-size: 3rem;
@@ -68,6 +95,10 @@
         transform: none;
         width: 100%;
       }
+    }
+
+    .animate-cards {
+      animation: animate-cards 1.5s forwards;
     }
 
     &:last-child {

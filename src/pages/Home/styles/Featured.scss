@@ -2,12 +2,12 @@
 
 @keyframes animate-featured {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     opacity: 0;
     filter: blur(15px);
   }
   100% {
-    transform: translateX(0%);
+    transform: translateY(0%);
     opacity: 1;
     filter: blur(0);
   }
@@ -55,7 +55,7 @@
     }
 
     .animate-featured {
-      animation: animate-featured 1s forwards;
+      animation: animate-featured 1.5s forwards;
     }
   }
 
