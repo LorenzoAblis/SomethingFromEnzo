@@ -1,9 +1,14 @@
+import { useRef, useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 import { Link } from "react-router-dom";
 import { redvelvet, meibday, macarons } from "../../assets/index.js";
 import "./styles/Featured.scss";
 import SectionTitle from "../../components/SectionTitle.jsx";
 
 const Featured = () => {
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
+
   const featured = [
     {
       title: "Red Velvet Cake",
@@ -30,11 +35,17 @@ const Featured = () => {
   };
 
   return (
-    <section className="info featured" id="featured">
+    <section className="info featured" id="featured" ref={myRef}>
       <SectionTitle title="Sweet Perfection" subtitle="Featured" />
       <div className="featured-cards">
         {featured.map((item, index) => (
-          <div key={index} className="featured-card">
+          <div
+            key={index}
+            className={`featured-card ${
+              myElementIsVisible ? "animate-featured" : ""
+            }`}
+            style={{ animationDelay: `${index * 200}ms` }}
+          >
             <img src={item.image} alt={item.image} />
             <h4>{item.title}</h4>
             <p>{item.baker}</p>

@@ -62,9 +62,22 @@ nav {
     li img {
       position: absolute;
       width: 6rem;
-      margin-top: 0;
+      margin-top: 2rem;
       z-index: 600;
       transform: translateY(15%);
+      animation: rotate-logo 3s infinite;
+
+      @keyframes rotate-logo {
+        0% {
+          transform: rotate(-20deg);
+        }
+        50% {
+          transform: rotate(20deg);
+        }
+        100% {
+          transform: rotate(-20deg);
+        }
+      }
 
       &:hover {
         width: 8rem;
@@ -124,6 +137,7 @@ nav {
         width: 3rem;
         filter: drop-shadow(black 0 0 0.15rem);
         transform: none;
+        margin-top: 0;
 
         &:hover {
           width: 4.5rem;

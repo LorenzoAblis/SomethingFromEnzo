@@ -1,5 +1,18 @@
 @import "../../../global.scss";
 
+@keyframes animate-featured {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    filter: blur(15px);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
 .featured {
   display: flex;
   margin-top: 3rem;
@@ -16,6 +29,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      opacity: 0;
 
       img {
         width: 80vw;
@@ -38,6 +52,10 @@
         margin: 0;
         font-size: 1.25rem;
       }
+    }
+
+    .animate-featured {
+      animation: animate-featured 1s forwards;
     }
   }
 
