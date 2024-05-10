@@ -38,22 +38,35 @@
 
       @keyframes dash {
         from {
-          stroke: white;
           stroke-dashoffset: 6603.2890625;
         }
-        7% {
-          opacity: 0;
-        }
-        13% {
-          stroke: url(#grad);
-          opacity: 1;
-        }
         to {
-          stroke: url(#grad);
           stroke-dashoffset: 0;
         }
       }
     }
+  }
+}
+
+@keyframes animate-landing-img {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes animate-landing-text {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
@@ -62,6 +75,14 @@
   align-items: center;
   text-align: center;
   margin-bottom: 2rem;
+
+  .animate-landing-text {
+    animation: animate-landing-text 3s forwards;
+  }
+
+  .animate-landing-img {
+    animation: animate-landing-img 3s forwards;
+  }
 
   img {
     width: 60vw;

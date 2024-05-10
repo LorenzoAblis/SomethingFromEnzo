@@ -1,4 +1,5 @@
 import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { redvelvet, meibday, macarons } from "../../assets/index.js";
@@ -7,6 +8,7 @@ import SectionTitle from "../../components/SectionTitle.jsx";
 
 const Featured = () => {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
+  const [featuredAnimated, setFeaturedAnimated] = useState(false);
 
   const featured = [
     {
@@ -33,6 +35,12 @@ const Featured = () => {
     });
   };
 
+  useEffect(() => {
+    if (myElementIsVisible && !featuredAnimated) {
+      setFeaturedAnimated(true);
+    }
+  }, [myElementIsVisible, featuredAnimated]);
+
   return (
     <section className="info featured" id="featured" ref={myRef}>
       <SectionTitle title="Sweet Perfection" subtitle="Featured" />
@@ -41,7 +49,7 @@ const Featured = () => {
           <div
             key={index}
             className={`featured-card ${
-              myElementIsVisible ? "animate-featured" : ""
+              featuredAnimated ? "animate-featured" : ""
             }`}
             style={{ animationDelay: `${index * 200}ms` }}
           >

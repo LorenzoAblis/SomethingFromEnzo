@@ -41,9 +41,7 @@ const History = () => {
 
   return (
     <section
-      className={`info about ${
-        historyAnimated && myElementIsVisible ? "animate-history" : ""
-      }`}
+      className={`info about ${historyAnimated ? "animate-history" : ""}`}
       id="history"
       ref={myRef}
     >
@@ -52,15 +50,13 @@ const History = () => {
         {aboutUs.map((item, index) => (
           <div
             key={index}
-            className={`history-card ${
-              historyAnimated && myElementIsVisible ? "animate-cards" : ""
-            }`}
+            className={`history-card ${historyAnimated ? "animate-cards" : ""}`}
             style={{
               animationDelay: `${
                 index === 1 || index === 2
                   ? 1200
                   : index === 0 || index === 3
-                  ? 1800
+                  ? 1500
                   : 0
               }ms`,
             }}

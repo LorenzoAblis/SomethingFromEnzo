@@ -9,6 +9,7 @@ const Handwriting = () => {
       height="330"
       viewBox="0 0 600 330"
       fill="none"
+      stroke="url(#grad)"
       xmlns="http://www.w3.org/2000/svg"
     >
       <filter id="dropshadow" height="130%">

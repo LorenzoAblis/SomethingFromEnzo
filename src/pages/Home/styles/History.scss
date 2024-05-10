@@ -1,28 +1,17 @@
 @import "../../../global.scss";
 
-@keyframes animate-cards {
-  0% {
-    opacity: 0;
-    filter: blur(15px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-@keyframes animate-history {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
 .animate-history {
+  @keyframes animate-history {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
   animation: animate-history 1.5s forwards;
 }
 
@@ -98,6 +87,17 @@
     }
 
     .animate-cards {
+      @keyframes animate-cards {
+        0% {
+          opacity: 0;
+          filter: blur(15px);
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+
       animation: animate-cards 1.5s forwards;
     }
 
