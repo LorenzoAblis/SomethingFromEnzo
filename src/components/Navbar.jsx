@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./styles/Navbar.scss";
-import logo from "../assets/icons/logo.png";
+import logo from "../assets/icons/logo.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
