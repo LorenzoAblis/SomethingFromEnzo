@@ -1,18 +1,5 @@
 @import "../../../global.scss";
 
-@keyframes animate-featured {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-    filter: blur(15px);
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
 .featured {
   display: flex;
   margin-top: 3rem;
@@ -52,10 +39,6 @@
         margin: 0;
         font-size: 1.25rem;
       }
-    }
-
-    .animate-featured {
-      animation: animate-featured 1.5s forwards;
     }
   }
 

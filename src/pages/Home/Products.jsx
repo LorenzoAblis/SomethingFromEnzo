@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import anime from "animejs/lib/anime.es.js";
 
 import { cake, muffin, croissant } from "../../assets/index.js";
 import ScrollArrow from "../../components/ScrollArrow.jsx";
@@ -23,38 +24,50 @@ const Products = () => {
     },
     {
       name: "French Cuisine",
-      text: "Recently, I've been expirementing with french pastries and I've been loving it.",
+      text: "Recently, I've been experimenting with French pastries and I've been loving it.",
       image: croissant,
     },
   ];
 
   useEffect(() => {
     if (myElementIsVisible && !productsAnimated) {
+      products.forEach((item, index) => {
+        anime({
+          targets: `.product-card:nth-child(${index + 1})`,
+          translateY: [-200, 0],
+          opacity: [0, 1],
+          delay: index * 400,
+          easing: "easeInOutExpo",
+        });
+
+        setTimeout(() => {
+          products.forEach((item, index) => {
+            anime({
+              targets: `.product-card:nth-child(${
+                index + 1
+              }) .img-container img`,
+              translateY: [-100, 0],
+              opacity: [0, 1],
+              delay: index * 600,
+              easing: "spring(2, 100, 10, 0)",
+            });
+          });
+          setProductsAnimated(true);
+        }, products.length * 300);
+      });
+
       setProductsAnimated(true);
     }
-  }, [myElementIsVisible, productsAnimated]);
+  }, [myElementIsVisible, productsAnimated, products]);
 
   return (
-    <section className="info product" id="products" ref={myRef}>
+    <section className="info product" id="products">
       <SectionTitle title="What do we make?" subtitle="Sweets" />
-      <div id="product-scroll" className="product-scroll">
+      <div id="product-scroll" className="product-scroll" ref={myRef}>
         {products.map((item, index) => (
-          <div
-            key={index}
-            className={`product-card ${
-              productsAnimated ? "animate-cards" : ""
-            }`}
-          >
+          <div key={index} className="product-card">
             <div className="img-container">
-              <img
-                src={item.image}
-                alt={item.image}
-                loading="lazy"
-                className={`${productsAnimated ? "animate-img" : ""}`}
-                style={{
-                  animationDelay: `${index === 0 ? 1000 : index * 1000}ms`,
-                }}
-              />
+              <img src={item.image} alt={item.image} loading="lazy" />
             </div>
             <h4>{item.name}</h4>
             <p>{item.text}</p>

@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import anime from "animejs/lib/anime.es.js";
 
 import { Link } from "react-router-dom";
 import { redvelvet, meibday, macarons } from "../../assets/index.js";
@@ -37,22 +38,25 @@ const Featured = () => {
 
   useEffect(() => {
     if (myElementIsVisible && !featuredAnimated) {
+      featured.forEach((item, index) => {
+        anime({
+          targets: `.featured-card:nth-child(${index + 1})`,
+          translateY: [-200, 0],
+          opacity: [0, 1],
+          delay: index * 600,
+          easing: "easeInOutQuad",
+        });
+      });
       setFeaturedAnimated(true);
     }
-  }, [myElementIsVisible, featuredAnimated]);
+  }, [myElementIsVisible, featuredAnimated, featured]);
 
   return (
-    <section className="info featured" id="featured" ref={myRef}>
+    <section className="info featured" id="featured">
       <SectionTitle title="Sweet Perfection" subtitle="Featured" />
-      <div className="featured-cards">
+      <div className="featured-cards" ref={myRef}>
         {featured.map((item, index) => (
-          <div
-            key={index}
-            className={`featured-card ${
-              featuredAnimated ? "animate-featured" : ""
-            }`}
-            style={{ animationDelay: `${index * 200}ms` }}
-          >
+          <div key={index} className="featured-card">
             <img src={item.image} alt={item.image} />
             <h4>{item.title}</h4>
             <p>{item.baker}</p>

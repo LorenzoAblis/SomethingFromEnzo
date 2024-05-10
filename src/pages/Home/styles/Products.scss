@@ -46,21 +46,6 @@
         }
       }
 
-      .animate-img {
-        @keyframes animate-img {
-          0% {
-            opacity: 0;
-            filter: blur(15px);
-          }
-          100% {
-            opacity: 1;
-            filter: blur(0);
-          }
-        }
-
-        animation: animate-img 2s forwards;
-      }
-
       h4 {
         font-size: 2.2rem;
         width: 100%;
@@ -77,55 +62,6 @@
         margin-bottom: 10vh;
         font-size: 1.25rem;
         color: black;
-      }
-    }
-
-    .animate-cards {
-      @keyframes animate-right-card {
-        0% {
-          opacity: 0;
-          transform: translateX(-200%);
-          filter: blur(15px);
-        }
-        100% {
-          transform: translateX(0%);
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-      @keyframes animate-middle-card {
-        0% {
-          opacity: 0;
-          filter: blur(15px);
-        }
-        100% {
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-
-      @keyframes animate-left-card {
-        0% {
-          opacity: 0;
-          transform: translateX(200%);
-          filter: blur(15px);
-        }
-        100% {
-          transform: translateX(0%);
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-
-      &:nth-child(1) {
-        animation: animate-left-card 2s forwards;
-      }
-      &:nth-child(2) {
-        animation: animate-middle-card 1.5s backwards;
-        animation-delay: 1.5s;
-      }
-      &:nth-child(3) {
-        animation: animate-right-card 2s forwards;
       }
     }
   }

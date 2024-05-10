@@ -1,23 +1,9 @@
 @import "../../../global.scss";
 
-.animate-history {
-  @keyframes animate-history {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-  }
-
-  animation: animate-history 1.5s forwards;
-}
-
 .about {
   background-color: $background-secondary;
   margin-bottom: 1rem;
+  opacity: 0;
 
   .section-header {
     margin-top: 4rem;
@@ -84,21 +70,6 @@
         transform: none;
         width: 100%;
       }
-    }
-
-    .animate-cards {
-      @keyframes animate-cards {
-        0% {
-          opacity: 0;
-          filter: blur(15px);
-        }
-        100% {
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-
-      animation: animate-cards 1.5s forwards;
     }
 
     &:last-child {
