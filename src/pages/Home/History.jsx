@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import anime from "animejs/lib/anime.es.js";
 
 import { abt1, abt2, abt3, chocolate } from "../../assets/index.js";
@@ -82,7 +83,7 @@ const History = () => {
           >
             <h4>{item.date}</h4>
             <p>{item.text}</p>
-            <img src={item.image} alt={item.image} />
+            <LazyLoadImage src={item.image} alt={item.image} />
           </div>
         ))}
       </div>

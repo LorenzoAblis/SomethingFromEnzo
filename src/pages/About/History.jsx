@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { abt1, abt2, abt3, momday, redvelvet } from "../../assets";
 import "./styles/History.scss";
 import SectionTitle from "../../components/SectionTitle";
@@ -48,7 +50,7 @@ const History = () => {
         {timeline.map((time, index) => (
           <div className="time-card" key={index}>
             <h4>{time.date}</h4>
-            <img src={time.image} alt={`${time.image} image`} />
+            <LazyLoadImage src={time.image} alt={`${time.image} image`} />
             <p>{time.text}</p>
           </div>
         ))}

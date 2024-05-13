@@ -1,4 +1,5 @@
 import * as images from "../assets";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 import "./styles/Footer.scss";
@@ -57,7 +58,7 @@ const Footer = () => {
     <footer>
       <section className="main-footer">
         <div className="contact">
-          <img src={images["logo"]} alt="logo" />
+          <LazyLoadImage src={images["logo"]} alt="logo" />
           <h2>Contact Info</h2>
           <p>lablis228609@gmail.com</p>
           <p>+1 224-518-9906</p>
@@ -83,7 +84,10 @@ const Footer = () => {
             {socials.map((social, index) => (
               <li key={index}>
                 <a href={social.link} target="_blank">
-                  <img src={images[social.image]} alt={social.image} />
+                  <LazyLoadImage
+                    src={images[social.image]}
+                    alt={social.image}
+                  />
                 </a>
               </li>
             ))}

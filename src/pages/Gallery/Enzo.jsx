@@ -1,4 +1,6 @@
 import * as images from "../../assets/cakes/enzo";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import "./styles/Enzo.scss";
 import SectionTitle from "../../components/SectionTitle";
 
@@ -28,6 +30,10 @@ const Enzo = () => {
       name: "Chocolate Élciars",
       images: ["eclairs"],
     },
+    {
+      name: "Buttercream Flower Cake",
+      images: ["momday", "momday2", "momday3", "momday4"],
+    },
   ];
 
   return (
@@ -39,7 +45,7 @@ const Enzo = () => {
           <div className="item-card" key={index}>
             <div className="image-container">
               {item.images.map((image, index) => (
-                <img
+                <LazyLoadImage
                   key={index}
                   src={images[image]}
                   alt={item.name}

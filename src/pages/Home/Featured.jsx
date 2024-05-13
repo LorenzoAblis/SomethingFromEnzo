@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import anime from "animejs/lib/anime.es.js";
 
 import { Link } from "react-router-dom";
@@ -43,7 +44,7 @@ const Featured = () => {
           targets: `.featured-card:nth-child(${index + 1})`,
           translateY: [-200, 0],
           opacity: [0, 1],
-          delay: index * 600,
+          delay: index * 500,
           easing: "easeInOutQuad",
         });
       });
@@ -57,7 +58,7 @@ const Featured = () => {
       <div className="featured-cards" ref={myRef}>
         {featured.map((item, index) => (
           <div key={index} className="featured-card">
-            <img src={item.image} alt={item.image} />
+            <LazyLoadImage effect="blur" src={item.image} alt={item.image} />
             <h4>{item.title}</h4>
             <p>{item.baker}</p>
           </div>

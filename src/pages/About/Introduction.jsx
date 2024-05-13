@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { enzo_intro, flo_intro } from "../../assets";
 import "./styles/Introduction.scss";
 
@@ -32,11 +34,11 @@ const Introduction = () => {
           <>
             <div key={index} className="intro-card">
               <h2>Somethin&apos; About {person.name}</h2>
-              <img src={person.image} alt={`${person.name} image`} />
+              <LazyLoadImage src={person.image} alt={`${person.name} image`} />
               <p>{person.text}</p>
             </div>
             <div key={index} className="intro-card-desktop">
-              <img src={person.image} alt={`${person.name} image`} />
+              <LazyLoadImage src={person.image} alt={`${person.name} image`} />
               <div className="card-text">
                 <h2>Somethin&apos; About {person.name}</h2>
                 <p>{person.text}</p>

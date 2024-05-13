@@ -17,6 +17,7 @@
   }
 
   p {
+    opacity: 0;
     font-family: "Dancing Script", cursive;
     color: $secondary;
     font-size: 2.35rem;
@@ -31,6 +32,7 @@
     gap: 1rem;
 
     img {
+      opacity: 0;
       object-fit: cover;
       margin-bottom: 1rem;
       filter: drop-shadow($primary 1px 1px 0.25rem);
@@ -49,6 +51,7 @@
         height: 0.2rem;
         background-color: rgba($accent, 0.5);
         border: 0;
+        opacity: 0;
       }
 
       h3 {
@@ -56,6 +59,7 @@
         font-family: "Dancing Script", cursive;
         color: $primary;
         font-size: 3rem;
+        opacity: 0;
       }
     }
 
@@ -63,6 +67,7 @@
       font-family: "Poppins", sans-serif;
       color: $background-secondary;
       font-size: 1.35rem;
+      opacity: 0;
     }
   }
 
@@ -77,6 +82,7 @@
     margin-top: 2rem;
 
     li {
+      opacity: 0;
       width: 100%;
 
       a {
@@ -95,6 +101,7 @@
     }
 
     hr {
+      opacity: 0;
       margin: auto;
       width: 100%;
       height: 0.2rem;

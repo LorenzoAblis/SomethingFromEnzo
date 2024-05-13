@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import anime from "animejs/lib/anime.es.js";
 
 import Handwriting from "../../assets/icons/Handwriting.jsx";
@@ -8,50 +9,52 @@ import "./styles/Landing.scss";
 import SectionTitle from "../../components/SectionTitle.jsx";
 
 const Landing = () => {
-  const { ref: myRef, inView: myElementIsVisible } = useInView();
+  const { ref: desktopRef, inView: desktopIsVisible } = useInView();
+  const { ref: mobileRef, inView: mobileIsVisible } = useInView();
   const [landingAnimated, setLandingAnimated] = useState(false);
 
   useEffect(() => {
-    if (myElementIsVisible && !landingAnimated) {
-      setTimeout(() => {
-        anime({
-          targets: ".homemade-text, .homemade p, .homemade .section-header",
-          translateX: [-500, 0],
-          opacity: [0, 1],
+    if ((desktopIsVisible || mobileIsVisible) && !landingAnimated) {
+      anime({
+        targets: ".homemade-text, .homemade p, .homemade .section-header",
+        translateX: [-100, 0],
+        opacity: [0, 1],
+        easing: "easeInOutSine",
+      });
 
-          easing: "easeInOutSine",
-        });
-
-        anime({
-          targets: ".homemade img",
-          translateX: [500, 0],
-          opacity: [0, 1],
-          easing: "easeInOutExpo",
-        });
-      }, 250);
+      anime({
+        targets: ".homemade img",
+        translateX: [500, 0],
+        opacity: [0, 1],
+        easing: "easeInOutExpo",
+      });
 
       setLandingAnimated(true);
     }
-  }, [myElementIsVisible, landingAnimated]);
+  }, [desktopIsVisible, mobileIsVisible, landingAnimated]);
 
   return (
     <>
       <div className="handwriting-title">
-        <img src={home_image} alt="home image" className="home-image" />
+        <LazyLoadImage
+          src={home_image}
+          alt="home image"
+          className="home-image"
+        />
         <div className="overlay"></div>
         <Handwriting />
       </div>
-      <section className="homemade hidden-on-desktop" ref={myRef}>
+      <section className="homemade hidden-on-desktop" ref={desktopRef}>
         <SectionTitle title="Homemade Deliciousness" subtitle="Welcome" />
-        <img src={homemade} alt="homemade" />
+        <LazyLoadImage src={homemade} alt="homemade" />
         <p>
           Welcome to Something From Enzo, where every creation is a labor of
           love. From meticulously designed cakes to whimsical cupcakes, each
           piece showcases my dedication to craftsmanship and passion for baking.
         </p>
       </section>
-      <section className="homemade hidden-on-mobile" ref={myRef}>
-        <img src={homemade} alt="homemade" />
+      <section className="homemade hidden-on-mobile" ref={mobileRef}>
+        <LazyLoadImage src={homemade} alt="homemade" />
         <div className="homemade-text">
           <SectionTitle title="Homemade Deliciousness" subtitle="Welcome" />
 

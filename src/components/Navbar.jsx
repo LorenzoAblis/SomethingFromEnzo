@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "./styles/Navbar.scss";
 import logo from "../assets/icons/logo.webp";
@@ -67,7 +68,7 @@ const Navbar = () => {
           ))}
         </div>
         <li className="logo">
-          <img src={logo} alt="" onClick={handleLogoClick} />
+          <LazyLoadImage src={logo} alt="" onClick={handleLogoClick} />
         </li>
         <div>
           {routes.slice(routes.length / 2).map((route, index) => (

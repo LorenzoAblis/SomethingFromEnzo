@@ -41,19 +41,21 @@ const Products = () => {
         });
 
         setTimeout(() => {
-          products.forEach((item, index) => {
-            anime({
-              targets: `.product-card:nth-child(${
-                index + 1
-              }) .img-container img`,
-              translateY: [-100, 0],
-              opacity: [0, 1],
-              delay: index * 600,
-              easing: "spring(2, 100, 10, 0)",
+          setTimeout(() => {
+            products.forEach((item, index) => {
+              anime({
+                targets: `.product-card:nth-child(${
+                  index + 1
+                }) .img-container img`,
+                translateY: [-100, 0],
+                opacity: [0, 1],
+                delay: index * 600,
+                easing: "spring(2, 100, 10, 0)",
+              });
             });
-          });
-          setProductsAnimated(true);
-        }, products.length * 300);
+            setProductsAnimated(true);
+          }, products.length * 300);
+        }, 500);
       });
 
       setProductsAnimated(true);
