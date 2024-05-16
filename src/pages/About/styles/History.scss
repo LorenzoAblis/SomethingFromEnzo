@@ -41,15 +41,22 @@
 
 @media (min-width: 1024px) {
   .history {
+    align-items: initial;
+    width: 100vw;
+
     .time-cards {
+      margin-top: 1rem;
+      display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5rem;
+      padding-left: 5rem;
+      gap: 10rem;
+
+      overflow-y: hidden;
 
       .time-card {
         width: 25%;
         height: 90vh;
+        flex-direction: column;
 
         img {
           width: 25vw;
