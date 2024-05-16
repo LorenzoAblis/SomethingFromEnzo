@@ -12,7 +12,7 @@ import Closing from "./Closing";
 const About = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const section = document.getElementById("history");
+    const section = document.getElementById("time-cards");
     const timeCards = gsap.utils.toArray(".time-card");
     gsap.to(timeCards, {
       xPercent: -120 * (timeCards.length - 1),
@@ -20,7 +20,7 @@ const About = () => {
       scrollTrigger: {
         trigger: section,
         pin: ".pinned-container",
-        scrub: 3,
+        scrub: true,
         snap: 1 / (timeCards.length - 1),
         end: "+=" + section.offsetWidth,
       },

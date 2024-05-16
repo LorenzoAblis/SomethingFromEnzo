@@ -45,9 +45,9 @@ const History = () => {
 
   return (
     <>
-      <section className="history" id="history">
+      <section className="history">
         <SectionTitle title="Our Story" subtitle="History" />
-        <div className="time-cards">
+        <div className="time-cards" id="time-cards">
           {timeline.map((time, index) => (
             <div className="time-card" key={index}>
               <h4>{time.date}</h4>
