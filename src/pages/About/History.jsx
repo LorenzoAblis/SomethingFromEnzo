@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { abt1, abt2, abt3, momday, redvelvet } from "../../assets";
@@ -8,24 +5,6 @@ import "./styles/History.scss";
 import SectionTitle from "../../components/SectionTitle";
 
 const History = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const section = document.getElementById("history");
-    const timeCards = gsap.utils.toArray(".time-card");
-    gsap.to(timeCards, {
-      xPercent: -120 * (timeCards.length - 1),
-      ease: "sine.out",
-      scrollTrigger: {
-        trigger: section,
-        pin: true,
-        scrub: 3,
-        snap: 1 / (timeCards.length - 1),
-        end: "+=" + section.offsetWidth,
-      },
-    });
-    ScrollTrigger.refresh();
-  }, []);
-
   const timeline = [
     {
       date: "1977",
@@ -65,18 +44,20 @@ const History = () => {
   ];
 
   return (
-    <section className="history" id="history">
-      <SectionTitle title="Our Story" subtitle="History" />
-      <div className="time-cards">
-        {timeline.map((time, index) => (
-          <div className="time-card" key={index}>
-            <h4>{time.date}</h4>
-            <LazyLoadImage src={time.image} alt={`${time.image} image`} />
-            <p>{time.text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <>
+      <section className="history" id="history">
+        <SectionTitle title="Our Story" subtitle="History" />
+        <div className="time-cards">
+          {timeline.map((time, index) => (
+            <div className="time-card" key={index}>
+              <h4>{time.date}</h4>
+              <LazyLoadImage src={time.image} alt={`${time.image} image`} />
+              <p>{time.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
