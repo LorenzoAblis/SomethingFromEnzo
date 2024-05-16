@@ -11,20 +11,22 @@ import Closing from "./Closing";
 
 const About = () => {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const section = document.getElementById("time-cards");
-    const timeCards = gsap.utils.toArray(".time-card");
-    gsap.to(timeCards, {
-      xPercent: -120 * (timeCards.length - 1),
-      ease: "sine.out",
-      scrollTrigger: {
-        trigger: section,
-        pin: ".pinned-container",
-        scrub: true,
-        snap: 1 / (timeCards.length - 1),
-        end: "+=" + section.offsetWidth,
-      },
-    });
+    // Check if window width is more than 1024px
+    if (window.innerWidth > 1024) {
+      gsap.registerPlugin(ScrollTrigger);
+      const section = document.getElementById("history");
+      const timeCards = gsap.utils.toArray(".time-card");
+      gsap.to(timeCards, {
+        xPercent: -130 * (timeCards.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          pin: ".pinned-container",
+          scrub: 0.5,
+          end: "+=" + section.offsetWidth,
+        },
+      });
+    }
   }, []);
 
   return (
@@ -33,8 +35,8 @@ const About = () => {
         <PageTitle title="About" img={meibday} />
         <Introduction />
         <History />
-        <Closing />
       </div>
+      <Closing />
     </main>
   );
 };

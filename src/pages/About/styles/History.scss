@@ -45,28 +45,47 @@
     width: 100vw;
 
     .time-cards {
-      margin-top: 1rem;
+      margin-top: -5rem;
       display: flex;
       flex-direction: row;
       padding-left: 5rem;
       gap: 10rem;
-
+      margin-bottom: 100rem;
       overflow-y: hidden;
+      overflow-x: hidden;
 
       .time-card {
-        width: 25%;
-        height: 90vh;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 100vh;
 
         img {
+          grid-column: 1 / 2;
+          grid-row: 1 / span 2;
           width: 25vw;
-          height: 40vh;
+          height: 50%;
           object-fit: cover;
         }
 
+        h4,
         p {
-          width: 100%;
+          padding-left: 5rem;
+        }
+
+        h4 {
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+          margin: auto;
+          margin-top: 40%;
+        }
+
+        p {
+          width: 40vw;
           font-size: 1.2rem;
+          grid-column: 2 / 3;
+          grid-row: 2 / 3;
+          padding-bottom: 40%;
         }
       }
     }

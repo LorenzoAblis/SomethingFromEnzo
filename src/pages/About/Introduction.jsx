@@ -37,7 +37,7 @@ const Introduction = () => {
               <LazyLoadImage src={person.image} alt={`${person.name} image`} />
               <p>{person.text}</p>
             </div>
-            <div key={index} className="intro-card-desktop">
+            <div key={index + 10} className="intro-card-desktop">
               <LazyLoadImage src={person.image} alt={`${person.name} image`} />
               <div className="card-text">
                 <h2>Somethin&apos; About {person.name}</h2>

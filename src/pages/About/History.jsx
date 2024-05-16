@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { abt1, abt2, abt3, momday, redvelvet } from "../../assets";
@@ -43,13 +45,57 @@ const History = () => {
     },
   ];
 
+  const timeCardsRef = useRef([]);
+
+  useEffect(() => {
+    if (window.innerWidth > 1024) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const h4 = entry.target.querySelector("h4");
+              const p = entry.target.querySelector("p");
+
+              gsap.from(h4, {
+                y: "-100%",
+                ease: "bounce.out",
+                duration: 1,
+              });
+              gsap.from(p, {
+                y: "100%",
+                ease: "bounce.out",
+                duration: 1,
+              });
+
+              // Unobserve the target after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.9 }
+      );
+
+      timeCardsRef.current.forEach((card) => {
+        observer.observe(card);
+      });
+
+      return () => {
+        observer.disconnect(); // Disconnect the observer when component unmounts
+      };
+    }
+  }, []);
+
   return (
     <>
-      <section className="history">
+      <section className="history" id="history">
         <SectionTitle title="Our Story" subtitle="History" />
-        <div className="time-cards" id="time-cards">
+        <div className="time-cards">
           {timeline.map((time, index) => (
-            <div className="time-card" key={index}>
+            <div
+              className="time-card"
+              key={index}
+              ref={(el) => (timeCardsRef.current[index] = el)}
+            >
               <h4>{time.date}</h4>
               <LazyLoadImage src={time.image} alt={`${time.image} image`} />
               <p>{time.text}</p>
