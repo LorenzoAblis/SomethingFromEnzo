@@ -4,7 +4,7 @@ const Handwriting = () => {
 
   return (
     <svg
-      className="handwriting"
+      className="absolute h-50 left-1/2 top-1/2 w-40 -translate-x-1/2 -translate-y-full scale-200 z-[500] flex justify-center items-center"
       width="800"
       height="330"
       viewBox="0 0 600 330"
@@ -12,22 +12,39 @@ const Handwriting = () => {
       stroke="url(#grad)"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <filter id="dropshadow" height="130%">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="3" />{" "}
-        <feOffset dx="2" dy="2" result="offsetblur" />{" "}
-        <feComponentTransfer>
-          <feFuncA type="linear" slope="1" />{" "}
-        </feComponentTransfer>
-        <feMerge>
-          <feMergeNode />
-          <feMergeNode in="SourceGraphic" />{" "}
-        </feMerge>
-      </filter>
-      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="35%" style={{ stopColor: pink, stopOpacity: 1 }} />
-        <stop offset="50%" style={{ stopColor: white, stopOpacity: 1 }} />
-        <stop offset="60%" style={{ stopColor: pink, stopOpacity: 1 }} />
-      </linearGradient>
+      <defs>
+        <filter id="dropshadow" height="130%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+          <feOffset dx="2" dy="2" result="offsetblur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="1" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="35%" stopColor={pink} stopOpacity="1" />
+          <stop offset="50%" stopColor={white} stopOpacity="1" />
+          <stop offset="60%" stopColor={pink} stopOpacity="1" />
+        </linearGradient>
+        <style>
+          {`
+          @keyframes dash {
+            from {
+              stroke-dashoffset: 6603.2890625;
+            }
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          #animated-path {
+            animation: dash 25s linear forwards;
+          }
+        `}
+        </style>
+      </defs>
       <g filter="url(#dropshadow)">
         <path
           transform="translate(35, 0)"
