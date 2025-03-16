@@ -1,4 +1,4 @@
-import "./styles/Home.scss";
+import Layout from "../../components/Layout";
 import Landing from "./Landing.jsx";
 import Featured from "./Featured.jsx";
 import History from "./History.jsx";
@@ -7,13 +7,13 @@ import Contact from "./Contact.jsx";
 
 const Home = () => {
   return (
-    <main>
+    <Layout>
       <Landing />
       <Featured />
       <History />
       <Products />
       <Contact />
-    </main>
+    </Layout>
   );
 };
 

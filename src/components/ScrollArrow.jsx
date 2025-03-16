@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import "./styles/ScrollArrow.scss";
 
 const ScrollArrow = ({ idName }) => {
   const [id, setId] = useState("");
@@ -21,19 +19,21 @@ const ScrollArrow = ({ idName }) => {
   };
 
   return (
-    <span className="arrow-scroll">
-      <button className="arrow-btn" onClick={() => handleScroll("l")}>
+    <span className="w-full flex flex-row justify-center gap-5 lg:hidden">
+      <button
+        className="w-1/3 text-primary border-2 border-accent rounded-2xl text-2xl"
+        onClick={() => handleScroll("l")}
+      >
         <i className="bi bi-chevron-double-left arrow"></i>
       </button>
-      <button className="arrow-btn" onClick={() => handleScroll("r")}>
+      <button
+        className="w-1/3 text-primary border-2 border-accent rounded-2xl text-2xl"
+        onClick={() => handleScroll("r")}
+      >
         <i className="bi bi-chevron-double-right arrow"></i>
       </button>
     </span>
   );
-};
-
-ScrollArrow.propTypes = {
-  className: PropTypes.string.isRequired,
 };
 
 export default ScrollArrow;

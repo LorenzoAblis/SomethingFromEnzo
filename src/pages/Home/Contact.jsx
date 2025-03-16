@@ -1,115 +1,79 @@
-import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import anime from "animejs";
-
-import { logo } from "../../assets/index.js";
-import "./styles/Contact.scss";
+const links = [
+  {
+    name: "Home",
+    link: "#home",
+  },
+  {
+    name: "Featured",
+    link: "#featured",
+  },
+  {
+    name: "History",
+    link: "#history",
+  },
+  {
+    name: "Products",
+    link: "#products",
+  },
+];
 
 const Contact = () => {
-  const { ref: myRef, inView: myElementIsVisible } = useInView();
-  const [contactAnimated, setProductsAnimated] = useState(false);
+  const handleAnchorClick = (e) => {
+    const href = e.currentTarget.getAttribute("href");
 
-  const links = [
-    {
-      name: "Home",
-      link: "#",
-    },
-    {
-      name: "Featured",
-      link: "#featured",
-    },
-    {
-      name: "History",
-      link: "#history",
-    },
-    {
-      name: "Products",
-      link: "#products",
-    },
-  ];
+    if (href.startsWith("#")) {
+      e.preventDefault();
 
-  useEffect(() => {
-    if (myElementIsVisible && !contactAnimated) {
-      anime({
-        targets: ".email img",
-        translateY: [-200, 0],
-        opacity: [0, 1],
-        rotate: {
-          value: 360,
-          duration: 1800,
-          easing: "spring(5, 100, 30, 1)",
-        },
-      });
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
 
-      anime({
-        targets: `.contact .slogan`,
-        translateY: [-400, 0],
-        color: ["#fe7a98", "#7a4b3b"],
-        opacity: [0, 1],
-        scale: [2, 1],
-        easing: "spring(1, 100, 10, 0)",
-        delay: 2250,
-      });
-
-      anime({
-        targets: `.contact .questions hr`,
-        width: [0, 100],
-        delay: 1500,
-        opacity: [0, 1],
-        fontSize: ["0.5rem", "1.35rem"],
-        easing: "spring(1, 100, 10, 0)",
-      });
-
-      anime({
-        targets: `.contact .questions h3, .contact .email h2`,
-        delay: 1500,
-        duration: 2000,
-        opacity: [0, 1],
-        scale: [0, 1],
-        easing: "easeInOutExpo",
-      });
-
-      links.forEach((item, index) => {
-        anime({
-          targets: `.page-map li:nth-child(${index + 1}), .page-map hr`,
-          translateX: [200, 0],
-          opacity: [0, 1],
-          delay: index * 500,
-          easing: "easeInOutExpo",
-        });
-        anime({
-          targets: `.page-map li:nth-child(${index + 4}), .page-map hr`,
-          translateX: [-200, 0],
-          opacity: [0, 1],
-          delay: index * 500,
-          easing: "easeInOutExpo",
-        });
-      });
-
-      setProductsAnimated(true);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  }, [myElementIsVisible, contactAnimated, links]);
+  };
 
   return (
-    <section className="contact">
-      <p className="slogan">Crafting delicious memories, one bite at a time.</p>
-      <div className="email">
-        <LazyLoadImage src={logo} alt="logo" />
-        <div className="questions">
-          <hr />
-          <h3>Questions?</h3>
-          <hr />
+    <section className="flex flex-col items-center text-center mt-20 w-full lg:flex-row lg:px-10 lg:gap-10">
+      <p className="font-dancing-script text-4xl w-5/6 text-secondary font-medium md:text-5xl md:w-3/4 lg:text-4xl xl:text-5xl">
+        Crafting delicious memories, one bite at a time.
+      </p>
+      <div className="flex flex-col items-center mt-15 w-7/8 md:w-1/2">
+        <div className="relative bg-primary p-2 rounded-full">
+          <img
+            src="/logo.webp"
+            alt="logo"
+            className="w-32 h-32 object-cover rounded-full"
+            loading="lazy"
+          />
         </div>
-        <h2 ref={myRef}>lablis228609@gmail.com</h2>
+        <div className="w-full mt-15 flex justify-center items-center gap-2">
+          <hr className="w-full h-1 bg-accent border-0" />
+          <h3 className="text-5xl font-dancing-script text-primary font-medium">
+            Questions?
+          </h3>
+          <hr className="w-full h-1 bg-accent border-0" />
+        </div>
+        <h2 className="mt-5 font-bold text-xl text-secondary">
+          lablis228609@gmail.com
+        </h2>
       </div>
-      <ul className="page-map">
+      <ul className="flex flex-col w-full mt-10 px-5 md:w-5/7">
         {links.map((link, index) => (
           <>
-            <li key={index}>
-              <a href={link.link}>{link.name}</a>
+            <li
+              key={index}
+              className="w-full p-4 hover:bg-primary hover:text-white"
+            >
+              <a
+                href={link.link}
+                onClick={handleAnchorClick}
+                className="block text-start text-lg text-secondary hover:text-white"
+              >
+                {link.name}
+              </a>
             </li>
-            <hr />
+            <hr className="m-auto w-full h-1 bg-primary border-0" />
           </>
         ))}
       </ul>

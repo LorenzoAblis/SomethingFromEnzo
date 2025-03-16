@@ -1,64 +1,45 @@
-import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import anime from "animejs/lib/anime.es.js";
-
-import Handwriting from "../../assets/icons/Handwriting.jsx";
-import { home_image, homemade } from "../../assets/index.js";
-import "./styles/Landing.scss";
 import SectionTitle from "../../components/SectionTitle.jsx";
+import Handwriting from "../../assets/Handwriting.jsx";
 
 const Landing = () => {
-  const { ref: desktopRef, inView: desktopIsVisible } = useInView();
-  const { ref: mobileRef, inView: mobileIsVisible } = useInView();
-  const [landingAnimated, setLandingAnimated] = useState(false);
-
-  useEffect(() => {
-    if ((desktopIsVisible || mobileIsVisible) && !landingAnimated) {
-      anime({
-        targets: ".homemade-text, .homemade p, .homemade .section-header",
-        translateX: [-100, 0],
-        opacity: [0, 1],
-        easing: "easeInOutSine",
-      });
-
-      anime({
-        targets: ".homemade img",
-        translateX: [500, 0],
-        opacity: [0, 1],
-        easing: "easeInOutExpo",
-      });
-
-      setLandingAnimated(true);
-    }
-  }, [desktopIsVisible, mobileIsVisible, landingAnimated]);
-
   return (
     <>
-      <div className="handwriting-title">
-        <LazyLoadImage
-          src={home_image}
-          alt="home image"
-          className="home-image"
-        />
-        <div className="overlay"></div>
+      <div className="lg:h-svh" id="home">
+        <div className="relative">
+          <img
+            src="/cakes/home_image.webp"
+            alt="home image"
+            className="object-cover h-100 w-full md:h-full lg:h-svh"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
         <Handwriting />
       </div>
-      <section className="homemade hidden-on-desktop" ref={desktopRef}>
+      <section className="mt-10 flex flex-col items-center md:hidden">
         <SectionTitle title="Homemade Deliciousness" subtitle="Welcome" />
-        <LazyLoadImage src={homemade} alt="homemade" />
-        <p>
+        <img
+          src="/cakes/homemade.webp"
+          alt="homemade"
+          className="object-cover w-3/4 rounded-3xl mt-5 shadow-[0.75rem_0.75rem_0rem_var(--color-secondary)]"
+          loading="lazy"
+        />
+        <p className="text-center mt-10 w-5/6">
           Welcome to Something From Enzo, where every creation is a labor of
           love. From meticulously designed cakes to whimsical cupcakes, each
           piece showcases my dedication to craftsmanship and passion for baking.
         </p>
       </section>
-      <section className="homemade hidden-on-mobile" ref={mobileRef}>
-        <LazyLoadImage src={homemade} alt="homemade" />
-        <div className="homemade-text">
+      <section className="mt-10 hidden flex-row items-center md:flex px-5 gap-10 justify-center">
+        <img
+          src="/cakes/homemade.webp"
+          alt="homemade"
+          className="object-cover w-1/2 rounded-3xl mt-5 shadow-[0.75rem_0.75rem_0rem_var(--color-secondary)] xl:w-2/5"
+          loading="lazy"
+        />
+        <div className="flex flex-col text-center items-center xl:w-1/2">
           <SectionTitle title="Homemade Deliciousness" subtitle="Welcome" />
-
-          <p>
+          <p className="text-center mt-10 w-5/6 xl:text-lg">
             Welcome to Something From Enzo, where every creation is a labor of
             love. From meticulously designed cakes to whimsical cupcakes, each
             piece showcases my dedication to craftsmanship and passion for

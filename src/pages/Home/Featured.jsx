@@ -1,35 +1,25 @@
-import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import anime from "animejs/lib/anime.es.js";
-
 import { Link } from "react-router-dom";
-import { redvelvet, meibday, macarons } from "../../assets/index.js";
-import "./styles/Featured.scss";
 import SectionTitle from "../../components/SectionTitle.jsx";
 
+const featured = [
+  {
+    title: "Red Velvet Cake",
+    baker: "Enzo Ablis",
+    image: "/cakes/redvelvet.webp",
+  },
+  {
+    title: "Fondant Lemon Cake",
+    baker: "Florence Ablis",
+    image: "/cakes/lemon.webp",
+  },
+  {
+    title: "Chocolate Macarons",
+    baker: "Enzo Ablis",
+    image: "/cakes/macarons.webp",
+  },
+];
+
 const Featured = () => {
-  const { ref: myRef, inView: myElementIsVisible } = useInView();
-  const [featuredAnimated, setFeaturedAnimated] = useState(false);
-
-  const featured = [
-    {
-      title: "Red Velvet Cake",
-      baker: "Enzo Ablis",
-      image: redvelvet,
-    },
-    {
-      title: "Fondant Lemon Cake",
-      baker: "Florence Ablis",
-      image: meibday,
-    },
-    {
-      title: "Chocolate Macarons",
-      baker: "Enzo Ablis",
-      image: macarons,
-    },
-  ];
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -37,34 +27,32 @@ const Featured = () => {
     });
   };
 
-  useEffect(() => {
-    if (myElementIsVisible && !featuredAnimated) {
-      featured.forEach((item, index) => {
-        anime({
-          targets: `.featured-card:nth-child(${index + 1})`,
-          translateY: [-200, 0],
-          opacity: [0, 1],
-          delay: index * 500,
-          easing: "easeInOutQuad",
-        });
-      });
-      setFeaturedAnimated(true);
-    }
-  }, [myElementIsVisible, featuredAnimated, featured]);
-
   return (
-    <section className="info featured" id="featured">
+    <section className="mt-20 flex flex-col items-center" id="featured">
       <SectionTitle title="Sweet Perfection" subtitle="Featured" />
-      <div className="featured-cards" ref={myRef}>
+      <div className="flex flex-col text-center mt-10 gap-10 md:flex-row md:flex-wrap md:justify-center">
         {featured.map((item, index) => (
-          <div key={index} className="featured-card">
-            <LazyLoadImage effect="blur" src={item.image} alt={item.image} />
-            <h4>{item.title}</h4>
-            <p>{item.baker}</p>
+          <div
+            key={index}
+            className="flex flex-col items-center md:w-5/11 xl:w-5/16"
+          >
+            <img
+              src={item.image}
+              alt={item.image}
+              className="w-5/6 rounded-3xl shadow-[0.75rem_0.75rem_0rem_var(--color-primary)]"
+            />
+            <h4 className="mt-10 font-bold text-xl text-secondary xl:text-2xl">
+              {item.title}
+            </h4>
+            <p className="text-lg">{item.baker}</p>
           </div>
         ))}
       </div>
-      <Link to="/SomethingFromEnzo/gallery" onClick={scrollToTop}>
+      <Link
+        to="/gallery"
+        onClick={scrollToTop}
+        className="mt-10 font-semibold text-lg text-primary p-3 border-4 border-primary"
+      >
         View All Creations
       </Link>
     </section>
