@@ -4,7 +4,7 @@ const Handwriting = () => {
 
   return (
     <svg
-      className="absolute h-50 left-1/2 top-1/2 w-40 -translate-x-1/2 -translate-y-full scale-200 z-[500] flex justify-center items-center"
+      className="absolute h-1/4 left-1/2 top-1/2 w-4/9 -translate-x-1/2 -translate-y-full scale-200 z-[500] flex justify-center items-center md:h-4/9 md:w-1/3 lg:h-1/4 lg:top-2/3"
       width="800"
       height="330"
       viewBox="0 0 600 330"
